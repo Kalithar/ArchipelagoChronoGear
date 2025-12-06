@@ -315,7 +315,7 @@ def generate_border_arts(player: int) -> list[Item]:
 
 def generate_world_unlocks(player: int) -> list[Item]:
     items: list[Item] = []
-    items.append(generate_item(player, item_time_unlock))
+    #items.append(generate_item(player, item_time_unlock)) For now, always starting in Time
     items.append(generate_item(player, item_nature_unlock))
     items.append(generate_item(player, item_space_unlock))
     items.append(generate_item(player, item_chaos_unlock))
@@ -324,6 +324,7 @@ def generate_world_unlocks(player: int) -> list[Item]:
     items.append(generate_item(player, item_alter_unlock))
     return items
 
+#Need to figure out what I'm doing for first stage
 def generate_stage_unlocks(player: int) -> list[Item]:
     items: list[Item] = []
     items.append(generate_item(player, item_stage_01))
@@ -364,7 +365,7 @@ def generate_stage_unlocks(player: int) -> list[Item]:
     items.append(generate_item(player, item_stage_49))
     items.append(generate_item(player, item_stage_50))
     items.append(generate_item(player, item_stage_51))
-    items.append(generate_item(player, item_stage_52))
+    #items.append(generate_item(player, item_stage_52)) Time hub, starting unlocked for now
     items.append(generate_item(player, item_stage_53))
     items.append(generate_item(player, item_stage_54))
     items.append(generate_item(player, item_stage_55))

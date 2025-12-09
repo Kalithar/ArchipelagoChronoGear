@@ -5,6 +5,8 @@ class CGItem():
     name: str
     type: ItemClassification
 
+    game = "Chrono Gear"
+
     def __init__(self, id: int, name: str, type: ItemClassification):
         self.id = id
         self.name = name
@@ -12,7 +14,15 @@ class CGItem():
 
 item_golden_gear: CGItem = CGItem(2001, "Golden Gear", ItemClassification.progression_skip_balancing)
 item_shackle: CGItem = CGItem(2101, "Laplus' Shackle", ItemClassification.progression)
-item_thread_of_time: CGItem = CGItem(2201, "Thread of Time", ItemClassification.progression_deprioritized_skip_balancing)
+
+item_thread_of_time1: CGItem = CGItem(2211, "Thread of Time - Time Page 1", ItemClassification.progression_deprioritized_skip_balancing)
+item_thread_of_time2: CGItem = CGItem(2211, "Thread of Time - Time Page 2", ItemClassification.progression_deprioritized_skip_balancing)
+item_thread_of_time3: CGItem = CGItem(2211, "Thread of Time - Time Page 3", ItemClassification.progression_deprioritized_skip_balancing)
+item_thread_of_space1: CGItem = CGItem(2211, "Thread of Time - Space Page 1", ItemClassification.progression_deprioritized_skip_balancing)
+item_thread_of_space2: CGItem = CGItem(2211, "Thread of Time - Sapce Page 2", ItemClassification.progression_deprioritized_skip_balancing)
+item_thread_of_nature: CGItem = CGItem(2211, "Thread of Time - Nature", ItemClassification.progression_deprioritized_skip_balancing)
+item_thread_of_civ: CGItem = CGItem(2211, "Thread of Time - Civilization", ItemClassification.progression_deprioritized_skip_balancing)
+item_thread_of_chaos: CGItem = CGItem(2211, "Thread of Time - Chaos", ItemClassification.progression_deprioritized_skip_balancing)
 
 item_chrono_gear: CGItem = CGItem(2400, "Chrono Gear", ItemClassification.progression)
 
@@ -181,7 +191,9 @@ item_stage_59: CGItem = CGItem(1159, "The Way Home", ItemClassification.progress
 item_stage_61: CGItem = CGItem(1161, "Zero Seconds to Midnight", ItemClassification.progression)
 
 def generate_item(player: int, cgItem: CGItem) -> Item:
-    return Item(cgItem.name, cgItem.classification, cgItem.id, player)
+    item = Item(cgItem.name, cgItem.classification, cgItem.id, player)
+    item.game = "Chrono Gear"
+    return item
 
 def generate_items(player: int, cgItem: CGItem, count: int) -> list[Item]:
     rtr = []
@@ -189,11 +201,22 @@ def generate_items(player: int, cgItem: CGItem, count: int) -> list[Item]:
         rtr.append(generate_item(player, cgItem))
     return rtr
 
+def generate_threads_of_time(player: int) -> list[Item]:
+    items : list[Item] = []
+    items.append(generate_items(player, item_thread_of_time1, 5))
+    items.append(generate_items(player, item_thread_of_time2, 5))
+    items.append(generate_items(player, item_thread_of_time3, 13))
+    items.append(generate_items(player, item_thread_of_space1, 4))
+    items.append(generate_items(player, item_thread_of_space2, 4))
+    items.append(generate_items(player, item_thread_of_nature, 4))
+    items.append(generate_items(player, item_thread_of_civ, 7))
+    items.append(generate_items(player, item_thread_of_chaos, 9))
+    return items
+
 def generate_tokens(player: int) -> list[Item]:
     items : list[Item] = []
     items.append(generate_items(player, item_golden_gear, 35))
     items.append(generate_items(player, item_shackle, 5))
-    items.append(generate_items(player, item_thread_of_time, 51))
     return items
 
 def generate_abilities(player:int) -> list[Item]:
@@ -380,7 +403,15 @@ def generate_items_for_mapping(player: int) -> list[Item]:
     items : list[Item] = []
     items.append(generate_item(player, item_golden_gear))
     items.append(generate_item(player, item_shackle))
-    items.append(generate_item(player, item_thread_of_time))
+
+    items.append(generate_item(player, item_thread_of_time1))
+    items.append(generate_item(player, item_thread_of_time2))
+    items.append(generate_item(player, item_thread_of_time3))
+    items.append(generate_item(player, item_thread_of_space1))
+    items.append(generate_item(player, item_thread_of_space2))
+    items.append(generate_item(player, item_thread_of_nature))
+    items.append(generate_item(player, item_thread_of_civ))
+    items.append(generate_item(player, item_thread_of_chaos))
 
     items.append(generate_abilities(player))
     items.append(generate_border_arts(player))

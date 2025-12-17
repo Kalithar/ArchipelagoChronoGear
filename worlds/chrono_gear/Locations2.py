@@ -18,6 +18,14 @@ def get_location_by_region(region: str) -> Dict[str, ChronoGearLocationData]:
     return {name: data for name, data in location_table.items() if data.region == region}
 
 location_table: Dict[str, ChronoGearLocationData] = {
+    #Starting Items
+
+    "Starting CD 1": ChronoGearLocationData("World Map", 100201),
+    "Starting CD 2": ChronoGearLocationData("World Map", 100202),
+    "Starting CD 3": ChronoGearLocationData("World Map", 100203),
+    "Starting Hub Unlock": ChronoGearLocationData("World Map", 1),
+    "Starting Level Unlock": ChronoGearLocationData("World Map", 110000),
+
     #World of Time
 
     "Unlock The Battle of Bell Town": ChronoGearLocationData("World of Time", 121000),
@@ -375,3 +383,10 @@ location_table: Dict[str, ChronoGearLocationData] = {
     #ZStM is likely going to be an event
 }
 
+event_location_table: Dict[str, ChronoGearLocationData] = {
+
+}
+
+def add_option_locations(world: ChronoGearWorld):
+    #Keep the defined table just the guaranteed locations, use these functions, which will be called by a parent function, to add optional ones
+    return

@@ -20,12 +20,12 @@ def get_location_by_region(region: str) -> Dict[str, ChronoGearLocationData]:
 location_table: Dict[str, ChronoGearLocationData] = {
     #Starting Items
 
-    "Starting CD 1": ChronoGearLocationData("World Map", 100201),
-    "Starting CD 2": ChronoGearLocationData("World Map", 100202),
-    "Starting CD 3": ChronoGearLocationData("World Map", 100203),
-    "Starting Hub Unlock": ChronoGearLocationData("World Map", 1),
-    "Starting Level Unlock": ChronoGearLocationData("World Map", 110000),
-
+    "Start Game - First CD": ChronoGearLocationData("World Map", 100201),
+    "Start Game - Second CD": ChronoGearLocationData("World Map", 100202),
+    "Start Game - Third CD": ChronoGearLocationData("World Map", 100203),
+    "Start Game - World of Time Unlock": ChronoGearLocationData("World Map", 1),
+    "Start Game - Storming the Sanctum Unlock": ChronoGearLocationData("World Map", 110000),
+    
     #World of Time
 
     "Unlock The Battle of Bell Town": ChronoGearLocationData("World of Time", 121000),
@@ -95,7 +95,6 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "The Top of Bell Tower - CD past Kroniephone and moving platform": ChronoGearLocationData("The Top of Bell Tower", 120212),
     "The Top of Bell Tower - Thread of Time above rolling platforms": ChronoGearLocationData("The Top of Bell Tower", 120370),
 
-    # Add locations for level unlocks
     "The Battle of Bell Town - Golden Gear": ChronoGearLocationData("The Battle of Bell Town", 121100),
 
     #Carnival Railway
@@ -359,7 +358,13 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "The Way Home - Chrono Gear": ChronoGearLocationData("The Way Home", 751400),
 
     #World of Darkness
-    #Need Intermission Location
+
+    "Intermission - Unlock The Space Between Worlds": ChronoGearLocationData("The Space Between Worlds", 610000),
+    #Where these actually end up depend on settings, but they're in the intermission in vanilla
+    "Intermission - Unlock World of Chaos": ChronoGearLocationData("Intermission", 5),
+    "Intermission - Unlock World of Civilization": ChronoGearLocationData("Intermission", 4),
+    "Intermission - Unlock Caravan of Darkness": ChronoGearLocationData("Intermission", 510000),
+    "Intermission - Unlock The Road to Civilization": ChronoGearLocationData("Intermission", 410000),
 
     "Her Time is Now - Unlock The Final Ascent": ChronoGearLocationData("Her Time is Now", 630000),
     "Her Time is Now - Golden Gear": ChronoGearLocationData("Her Time is Now", 620100),
@@ -380,13 +385,12 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     "Steel on Steel - Unlock Zero Seconds to Midnight": ChronoGearLocationData("Steel on Steel", 632000),
 
-    #ZStM is likely going to be an event
 }
 
 event_location_table: Dict[str, ChronoGearLocationData] = {
-
+    "Zero Seconds to Midnight - Clear Level": ChronoGearLocationData("Zero Seconds to Midnight", None),
+    "Wrath of Nature - Clear Level": ChronoGearLocationData("Wrath of Nature", None),
+    "Ganmo's Grand Finale - Clear Level": ChronoGearLocationData("Ganmo's Grand Finale", None),
+    "Another Time Traveler? - Clear Level": ChronoGearLocationData("Another Time Traveler?", None),
+    "Roboco Strikes Back - Clear Level": ChronoGearLocationData("Roboco Strikes Back", None),
 }
-
-def add_option_locations(world: ChronoGearWorld):
-    #Keep the defined table just the guaranteed locations, use these functions, which will be called by a parent function, to add optional ones
-    return

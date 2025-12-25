@@ -29,6 +29,29 @@ class GearHuntRequirement(Range):
 
     default = 35
 
+class SteelOnSteelShackleRequirement(Range):
+    """
+    The number of Laplus' Shackles required to access Steel on Steel
+    """
+
+    display_name = "Steel on Steel Shackle Requirement"
+
+    range_start = 0
+    range_end = 5
+
+    default = 5
+
+class ZStMShackleRequirement(Range):
+    """
+    The number of Laplus' Shackles required to access Zero Seconds to Midnight
+    """
+
+    display_name = "Zero Seconds to Midnight Shackle Requirement"
+
+    range_start = 0
+    range_end = 5
+
+    default = 5
 
 class WorldUnlockMode(Choice):
     """
@@ -69,33 +92,23 @@ class StartingWorld(Choice):
     option_civilization = 3
     option_chaos = 4
     option_alter = 5
+    option_random = 6
     #No Darkness because it doesn't have a hub
 
     default = option_time
 
-class SteelOnSteelShackleRequirement(Range):
+class EarlyChronoGear(Toggle):
     """
-    The number of Laplus' Shackles required to access Steel on Steel
-    """
-
-    display_name = "Steel on Steel Shackle Requirement"
-
-    range_start = 0
-    range_end = 5
-
-    default = 5
-
-class ZStMShackleRequirement(Range):
-    """
-    The number of Laplus' Shackles required to access Zero Seconds to Midnight
+    Controls whether the Chrono Gear is available in levels before you would normally obtain it.
+    If disabled, the Chrono Gear is only available in the levels it is normally available in (A Way Home and later).
+    If enabled, it is available in all levels once acquired.
     """
 
-    display_name = "Zero Seconds to Midnight Shackle Requirement"
+    display_name = "Early Chrono Gear"
 
-    range_start = 0
-    range_end = 5
+    default = True
 
-    default = 5
+
 
 @dataclass
 class ChronoGearOptions(PerGameCommonOptions):
@@ -106,3 +119,4 @@ class ChronoGearOptions(PerGameCommonOptions):
     starting_world: StartingWorld
     steel_on_steel_shackle_requirement: SteelOnSteelShackleRequirement
     zero_seconds_to_midnight_shackle_requirement: ZStMShackleRequirement
+    early_chrono_gear: EarlyChronoGear

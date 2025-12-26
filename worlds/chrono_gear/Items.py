@@ -1,422 +1,327 @@
 from BaseClasses import Item, ItemClassification
+from typing import NamedTuple, TYPE_CHECKING, Dict
 
-class CGItem():
-    id: int
-    name: str
-    type: ItemClassification
+if TYPE_CHECKING:
+    from . import ChronoGearWorld
 
+class CGItem(Item):
     game = "Chrono Gear"
 
-    def __init__(self, id: int, name: str, type: ItemClassification):
-        self.id = id
-        self.name = name
-        self.type = type
+class CGItemData(NamedTuple):
+    id: int
+    classification: ItemClassification
+    max_quantity: int = 1
 
-item_golden_gear: CGItem = CGItem(2001, "Golden Gear", ItemClassification.progression_skip_balancing)
-item_shackle: CGItem = CGItem(2101, "Laplus' Shackle", ItemClassification.progression)
+item_table: Dict[str, CGItemData] = {
+    "Golden Gear": CGItemData(2001, ItemClassification.progression_skip_balancing, 35),
+    "Laplus' Shackle": CGItemData(2101, ItemClassification.progression, 5),
 
-item_thread_of_time1: CGItem = CGItem(2211, "Thread of Time - Time Page 1", ItemClassification.progression_deprioritized_skip_balancing)
-item_thread_of_time2: CGItem = CGItem(2211, "Thread of Time - Time Page 2", ItemClassification.progression_deprioritized_skip_balancing)
-item_thread_of_time3: CGItem = CGItem(2211, "Thread of Time - Time Page 3", ItemClassification.progression_deprioritized_skip_balancing)
-item_thread_of_space1: CGItem = CGItem(2211, "Thread of Time - Space Page 1", ItemClassification.progression_deprioritized_skip_balancing)
-item_thread_of_space2: CGItem = CGItem(2211, "Thread of Time - Sapce Page 2", ItemClassification.progression_deprioritized_skip_balancing)
-item_thread_of_nature: CGItem = CGItem(2211, "Thread of Time - Nature", ItemClassification.progression_deprioritized_skip_balancing)
-item_thread_of_civ: CGItem = CGItem(2211, "Thread of Time - Civilization", ItemClassification.progression_deprioritized_skip_balancing)
-item_thread_of_chaos: CGItem = CGItem(2211, "Thread of Time - Chaos", ItemClassification.progression_deprioritized_skip_balancing)
+    "Thread of Time - Time Page 1": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 5),
+    "Thread of Time - Time Page 2": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 5),
+    "Thread of Time - Time Page 3": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 13),
+    "Thread of Time - Space Page 1": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 4),
+    "Thread of Time - Sapce Page 2": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 4),
+    "Thread of Time - Nature": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 4),
+    "Thread of Time - Civilization": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 7),
+    "Thread of Time - Chaos": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 9),
 
-item_chrono_gear: CGItem = CGItem(2400, "Chrono Gear", ItemClassification.progression)
+    "Chrono Gear": CGItemData(2400, ItemClassification.progression),
 
-item_cd_01: CGItem = CGItem(2301, "CD - Chrono Gear", ItemClassification.filler)
-item_cd_02: CGItem = CGItem(2302, "CD - Her Time is Now (Intro Mix)", ItemClassification.filler)
-item_cd_03: CGItem = CGItem(2303, "CD - Take Your Time", ItemClassification.filler)
-item_cd_04: CGItem = CGItem(2304, "CD - Daydream (Tutorial Mix)", ItemClassification.filler)
-item_cd_05: CGItem = CGItem(2305, "CD - A Beginning", ItemClassification.filler)
-item_cd_06: CGItem = CGItem(2306, "CD - Bad Dream", ItemClassification.filler)
-item_cd_07: CGItem = CGItem(2307, "CD - Separation", ItemClassification.filler)
-item_cd_08: CGItem = CGItem(2308, "CD - Doorway to Nowhere", ItemClassification.filler)
-item_cd_09: CGItem = CGItem(2309, "CD - Eternal Ambition", ItemClassification.filler)
-item_cd_10: CGItem = CGItem(2310, "CD - Victory Theme", ItemClassification.filler)
-item_cd_11: CGItem = CGItem(2311, "CD - World Map", ItemClassification.filler)
-item_cd_12: CGItem = CGItem(2312, "CD - Bell Town", ItemClassification.filler)
-item_cd_13: CGItem = CGItem(2313, "CD - Bell Town Under", ItemClassification.filler)
-item_cd_14: CGItem = CGItem(2314, "CD - Unlucky Steps", ItemClassification.filler)
-item_cd_15: CGItem = CGItem(2315, "CD - Carnival Railway", ItemClassification.filler)
-item_cd_16: CGItem = CGItem(2316, "CD - Sands of Time", ItemClassification.filler)
-item_cd_17: CGItem = CGItem(2317, "CD - Jewel Cyclone", ItemClassification.filler)
-item_cd_18: CGItem = CGItem(2318, "CD - Jouya Repaint (Boss Mix)", ItemClassification.filler)
-item_cd_19: CGItem = CGItem(2319, "CD - Jouya Repaint (Talk Mix)", ItemClassification.filler)
-item_cd_20: CGItem = CGItem(2320, "CD - Cutscene - Council Meeting", ItemClassification.filler)
-item_cd_21: CGItem = CGItem(2321, "CD - Galaxy Gourmet", ItemClassification.filler)
-item_cd_22: CGItem = CGItem(2322, "CD - Sana's Theme", ItemClassification.filler)
-item_cd_23: CGItem = CGItem(2323, "CD - Starship ID", ItemClassification.filler)
-item_cd_24: CGItem = CGItem(2324, "CD - Cutscene - Space Traffic", ItemClassification.filler)
-item_cd_25: CGItem = CGItem(2325, "CD - Marine's Theme", ItemClassification.filler)
-item_cd_26: CGItem = CGItem(2326, "CD - Battleship Aquamarine", ItemClassification.filler)
-item_cd_27: CGItem = CGItem(2327, "CD - Bare Your Teeth", ItemClassification.filler)
-item_cd_28: CGItem = CGItem(2328, "CD - Ahoy?", ItemClassification.filler)
-item_cd_29: CGItem = CGItem(2329, "CD - Hoshinova Castle (Outer)", ItemClassification.filler)
-item_cd_30: CGItem = CGItem(2330, "CD - Hoshinova Castle", ItemClassification.filler)
-item_cd_31: CGItem = CGItem(2331, "CD - Alter Laplus Thoughts", ItemClassification.filler)
-item_cd_32: CGItem = CGItem(2332, "CD - The World Tree (Spring)", ItemClassification.filler)
-item_cd_33: CGItem = CGItem(2333, "CD - The World Tree (Summer)", ItemClassification.filler)
-item_cd_34: CGItem = CGItem(2334, "CD - The World Tree (Autumn)", ItemClassification.filler)
-item_cd_35: CGItem = CGItem(2335, "CD - The World Tree (Winter)", ItemClassification.filler)
-item_cd_36: CGItem = CGItem(2336, "CD - Magic Resort", ItemClassification.filler)
-item_cd_37: CGItem = CGItem(2337, "CD - Teatime", ItemClassification.filler)
-item_cd_38: CGItem = CGItem(2338, "CD - Sky Tops", ItemClassification.filler)
-item_cd_39: CGItem = CGItem(2339, "CD - Tidal Camp", ItemClassification.filler)
-item_cd_40: CGItem = CGItem(2340, "CD - Pekora's Theme", ItemClassification.filler)
-item_cd_41: CGItem = CGItem(2341, "CD - Depths of Atlantis", ItemClassification.filler)
-item_cd_42: CGItem = CGItem(2342, "CD - Wrath of Nature", ItemClassification.filler)
-item_cd_43: CGItem = CGItem(2343, "CD - Between Worlds", ItemClassification.filler)
-item_cd_44: CGItem = CGItem(2344, "CD - Alter Laplus Theme", ItemClassification.filler)
-item_cd_45: CGItem = CGItem(2345, "CD - Dear Highest Death", ItemClassification.filler)
-item_cd_46: CGItem = CGItem(2346, "CD - Dear Highest Death - Try Again", ItemClassification.filler)
-item_cd_47: CGItem = CGItem(2347, "CD - Reflection in Time", ItemClassification.filler)
-item_cd_48: CGItem = CGItem(2348, "CD - Town Square", ItemClassification.filler)
-item_cd_49: CGItem = CGItem(2349, "CD - Castle Road", ItemClassification.filler)
-item_cd_50: CGItem = CGItem(2350, "CD - Castle Siege", ItemClassification.filler)
-item_cd_51: CGItem = CGItem(2351, "CD - The Maze", ItemClassification.filler)
-item_cd_52: CGItem = CGItem(2352, "CD - Cursed Lands", ItemClassification.filler)
-item_cd_53: CGItem = CGItem(2353, "CD - Magitech Forge", ItemClassification.filler)
-item_cd_54: CGItem = CGItem(2354, "CD - -little bit-", ItemClassification.filler)
-item_cd_55: CGItem = CGItem(2355, "CD - Baelz's Theme", ItemClassification.filler)
-item_cd_56: CGItem = CGItem(2356, "CD - Highway of Dreams", ItemClassification.filler)
-item_cd_57: CGItem = CGItem(2357, "CD - The Funzone", ItemClassification.filler)
-item_cd_58: CGItem = CGItem(2358, "CD - Amelia's Theme", ItemClassification.filler)
-item_cd_59: CGItem = CGItem(2359, "CD - Ducky God Arcade", ItemClassification.filler)
-item_cd_60: CGItem = CGItem(2360, "CD - Symphonic Gallery", ItemClassification.filler)
-item_cd_61: CGItem = CGItem(2361, "CD - Kiara's Theme", ItemClassification.filler)
-item_cd_62: CGItem = CGItem(2362, "CD - KFP Stadium", ItemClassification.filler)
-item_cd_63: CGItem = CGItem(2363, "CD - Hurry Up", ItemClassification.filler)
-item_cd_64: CGItem = CGItem(2364, "CD - On the Case", ItemClassification.filler)
-item_cd_65: CGItem = CGItem(2365, "CD - Candle in the Dark", ItemClassification.filler)
-item_cd_66: CGItem = CGItem(2366, "CD - Alter Bell Town", ItemClassification.filler)
-item_cd_67: CGItem = CGItem(2367, "CD - Alter Hoshinova Castle", ItemClassification.filler)
-item_cd_68: CGItem = CGItem(2368, "CD - I Can't Reach You", ItemClassification.filler)
-item_cd_69: CGItem = CGItem(2369, "CD - Alter World Tree", ItemClassification.filler)
-item_cd_70: CGItem = CGItem(2370, "CD - Deep Cut", ItemClassification.filler)
-item_cd_71: CGItem = CGItem(2371, "CD - Alter Castle Road", ItemClassification.filler)
-item_cd_72: CGItem = CGItem(2372, "CD - Truth of Despair", ItemClassification.filler)
-item_cd_73: CGItem = CGItem(2373, "CD - Hand in Hand", ItemClassification.filler)
-item_cd_74: CGItem = CGItem(2374, "CD - Alter KFP Stadium", ItemClassification.filler)
-item_cd_75: CGItem = CGItem(2375, "CD - Her Time is Now (Dark Nest)", ItemClassification.filler)
-item_cd_76: CGItem = CGItem(2376, "CD - Tower of Darkness (Lobby)", ItemClassification.filler)
-item_cd_77: CGItem = CGItem(2377, "CD - Tower of Darkness (Prelude)", ItemClassification.filler)
-item_cd_78: CGItem = CGItem(2378, "CD - Tower of Darkness (Interior)", ItemClassification.filler)
-item_cd_79: CGItem = CGItem(2379, "CD - Tower of Darkness (Exterior)", ItemClassification.filler)
-item_cd_80: CGItem = CGItem(2380, "CD - Tower of Light", ItemClassification.filler)
-item_cd_81: CGItem = CGItem(2381, "CD - My Decaying Heart", ItemClassification.filler)
-item_cd_82: CGItem = CGItem(2382, "CD - Steel on Steel (Tower of Darknesss 3)", ItemClassification.filler) #This is only one spelled Darknesss for some reason
-item_cd_83: CGItem = CGItem(2383, "CD - Zero Seconds to Midnight", ItemClassification.filler)
-item_cd_84: CGItem = CGItem(2384, "CD - IRyS's Theme", ItemClassification.filler)
-item_cd_85: CGItem = CGItem(2385, "CD - Chrono Gear Launch Trailer", ItemClassification.filler)
-item_cd_86: CGItem = CGItem(2386, "CD - Threads of Time", ItemClassification.filler)
-item_cd_87: CGItem = CGItem(2387, "CD - Daydreaming in Darkness", ItemClassification.filler)
+    "CD - Chrono Gear": CGItemData(2301, ItemClassification.filler),
+    "CD - Her Time is Now (Intro Mix)": CGItemData(2302, ItemClassification.filler),
+    "CD - Take Your Time": CGItemData(2303, ItemClassification.filler),
+    "CD - Daydream (Tutorial Mix)": CGItemData(2304, ItemClassification.filler),
+    "CD - A Beginning": CGItemData(2305, ItemClassification.filler),
+    "CD - Bad Dream": CGItemData(2306, ItemClassification.filler),
+    "CD - Separation": CGItemData(2307, ItemClassification.filler),
+    "CD - Doorway to Nowhere": CGItemData(2308, ItemClassification.filler),
+    "CD - Eternal Ambition": CGItemData(2309, ItemClassification.filler),
+    "CD - Victory Theme": CGItemData(2310, ItemClassification.filler),
+    "CD - World Map": CGItemData(2311, ItemClassification.filler),
+    "CD - Bell Town": CGItemData(2312, ItemClassification.filler),
+    "CD - Bell Town Under": CGItemData(2313, ItemClassification.filler),
+    "CD - Unlucky Steps": CGItemData(2314, ItemClassification.filler),
+    "CD - Carnival Railway": CGItemData(2315, ItemClassification.filler),
+    "CD - Sands of Time": CGItemData(2316, ItemClassification.filler),
+    "CD - Jewel Cyclone": CGItemData(2317, ItemClassification.filler),
+    "CD - Jouya Repaint (Boss Mix)": CGItemData(2318, ItemClassification.filler),
+    "CD - Jouya Repaint (Talk Mix)": CGItemData(2319, ItemClassification.filler),
+    "CD - Cutscene - Council Meeting": CGItemData(2320, ItemClassification.filler),
+    "CD - Galaxy Gourmet": CGItemData(2321, ItemClassification.filler),
+    "CD - Sana's Theme": CGItemData(2322, ItemClassification.filler),
+    "CD - Starship ID": CGItemData(2323, ItemClassification.filler),
+    "CD - Cutscene - Space Traffic": CGItemData(2324, ItemClassification.filler),
+    "CD - Marine's Theme": CGItemData(2325, ItemClassification.filler),
+    "CD - Battleship Aquamarine": CGItemData(2326, ItemClassification.filler),
+    "CD - Bare Your Teeth": CGItemData(2327, ItemClassification.filler),
+    "CD - Ahoy?": CGItemData(2328, ItemClassification.filler),
+    "CD - Hoshinova Castle (Outer)": CGItemData(2329, ItemClassification.filler),
+    "CD - Hoshinova Castle": CGItemData(2330, ItemClassification.filler),
+    "CD - Alter Laplus Thoughts": CGItemData(2331, ItemClassification.filler),
+    "CD - The World Tree (Spring)": CGItemData(2332, ItemClassification.filler),
+    "CD - The World Tree (Summer)": CGItemData(2333, ItemClassification.filler),
+    "CD - The World Tree (Autumn)": CGItemData(2334, ItemClassification.filler),
+    "CD - The World Tree (Winter)": CGItemData(2335, ItemClassification.filler),
+    "CD - Magic Resort": CGItemData(2336, ItemClassification.filler),
+    "CD - Teatime": CGItemData(2337, ItemClassification.filler),
+    "CD - Sky Tops": CGItemData(2338, ItemClassification.filler),
+    "CD - Tidal Camp": CGItemData(2339, ItemClassification.filler),
+    "CD - Pekora's Theme": CGItemData(2340, ItemClassification.filler),
+    "CD - Depths of Atlantis": CGItemData(2341, ItemClassification.filler),
+    "CD - Wrath of Nature": CGItemData(2342, ItemClassification.filler),
+    "CD - Between Worlds": CGItemData(2343, ItemClassification.filler),
+    "CD - Alter Laplus Theme": CGItemData(2344, ItemClassification.filler),
+    "CD - Dear Highest Death": CGItemData(2345, ItemClassification.filler),
+    "CD - Dear Highest Death - Try Again": CGItemData(2346, ItemClassification.filler),
+    "CD - Reflection in Time": CGItemData(2347, ItemClassification.filler),
+    "CD - Town Square": CGItemData(2348, ItemClassification.filler),
+    "CD - Castle Road": CGItemData(2349, ItemClassification.filler),
+    "CD - Castle Siege": CGItemData(2350, ItemClassification.filler),
+    "CD - The Maze": CGItemData(2351, ItemClassification.filler),
+    "CD - Cursed Lands": CGItemData(2352, ItemClassification.filler),
+    "CD - Magitech Forge": CGItemData(2353, ItemClassification.filler),
+    "CD - -little bit-": CGItemData(2354, ItemClassification.filler),
+    "CD - Baelz's Theme": CGItemData(2355, ItemClassification.filler),
+    "CD - Highway of Dreams": CGItemData(2356, ItemClassification.filler),
+    "CD - The Funzone": CGItemData(2357, ItemClassification.filler),
+    "CD - Amelia's Theme": CGItemData(2358, ItemClassification.filler),
+    "CD - Ducky God Arcade": CGItemData(2359, ItemClassification.filler),
+    "CD - Symphonic Gallery": CGItemData(2360, ItemClassification.filler),
+    "CD - Kiara's Theme": CGItemData(2361, ItemClassification.filler),
+    "CD - KFP Stadium": CGItemData(2362, ItemClassification.filler),
+    "CD - Hurry Up": CGItemData(2363, ItemClassification.filler),
+    "CD - On the Case": CGItemData(2364, ItemClassification.filler),
+    "CD - Candle in the Dark": CGItemData(2365, ItemClassification.filler),
+    "CD - Alter Bell Town": CGItemData(2366, ItemClassification.filler),
+    "CD - Alter Hoshinova Castle": CGItemData(2367, ItemClassification.filler),
+    "CD - I Can't Reach You": CGItemData(2368, ItemClassification.filler),
+    "CD - Alter World Tree": CGItemData(2369, ItemClassification.filler),
+    "CD - Deep Cut": CGItemData(2370, ItemClassification.filler),
+    "CD - Alter Castle Road": CGItemData(2371, ItemClassification.filler),
+    "CD - Truth of Despair": CGItemData(2372, ItemClassification.filler),
+    "CD - Hand in Hand": CGItemData(2373, ItemClassification.filler),
+    "CD - Alter KFP Stadium": CGItemData(2374, ItemClassification.filler),
+    "CD - Her Time is Now (Dark Nest)": CGItemData(2375, ItemClassification.filler),
+    "CD - Tower of Darkness (Lobby)": CGItemData(2376, ItemClassification.filler),
+    "CD - Tower of Darkness (Prelude)": CGItemData(2377, ItemClassification.filler),
+    "CD - Tower of Darkness (Interior)": CGItemData(2378, ItemClassification.filler),
+    "CD - Tower of Darkness (Exterior)": CGItemData(2379, ItemClassification.filler),
+    "CD - Tower of Light": CGItemData(2380, ItemClassification.filler),
+    "CD - My Decaying Heart": CGItemData(2381, ItemClassification.filler),
+    "CD - Steel on Steel (Tower of Darknesss 3)": CGItemData(2382, ItemClassification.filler),
+    "CD - Zero Seconds to Midnight": CGItemData(2383, ItemClassification.filler),
+    "CD - IRyS's Theme": CGItemData(2384, ItemClassification.filler),
+    "CD - Chrono Gear Launch Trailer": CGItemData(2385, ItemClassification.filler),
+    "CD - Threads of Time": CGItemData(2386, ItemClassification.filler),
+    "CD - Daydreaming in Darkness": CGItemData(2387, ItemClassification.filler),
 
-#These ones are a little weird with their sorting and how I unlock them, so weird IDs
-item_border_01: CGItem = CGItem(2521, "Border Art - TimeRyS", ItemClassification.filler)
-item_border_02: CGItem = CGItem(2501, "Border Art - Amelia", ItemClassification.filler)
-item_border_03: CGItem = CGItem(2510, "Border Art - holoX", ItemClassification.filler)
-item_border_04: CGItem = CGItem(2509, "Border Art - IRyS", ItemClassification.filler)
-item_border_05: CGItem = CGItem(2516, "Border Art - Myth", ItemClassification.filler)
-item_border_06: CGItem = CGItem(2507, "Border Art - Fauna", ItemClassification.filler)
-item_border_07: CGItem = CGItem(2511, "Border Art - id:entity", ItemClassification.filler)
-item_border_08: CGItem = CGItem(2508, "Border Art - Ina", ItemClassification.filler)
-item_border_09: CGItem = CGItem(2519, "Border Art - Sana", ItemClassification.filler)
-item_border_10: CGItem = CGItem(2520, "Border Art - Souten ni Moyu", ItemClassification.filler)
-item_border_11: CGItem = CGItem(2514, "Border Art - Moona", ItemClassification.filler)
-item_border_12: CGItem = CGItem(2515, "Border Art - Mumei", ItemClassification.filler)
-item_border_13: CGItem = CGItem(2506, "Border Art - Calli", ItemClassification.filler)
-item_border_14: CGItem = CGItem(2518, "Border Art - Roboco-san", ItemClassification.filler)
-item_border_15: CGItem = CGItem(2503, "Border Art - Baelz", ItemClassification.filler)
-item_border_16: CGItem = CGItem(2513, "Border Art - Laplus", ItemClassification.filler)
-item_border_17: CGItem = CGItem(2512, "Border Art - Korone", ItemClassification.filler)
+    "Border Art - TimeRyS": CGItemData(2521, ItemClassification.filler),
+    "Border Art - Amelia": CGItemData(2501, ItemClassification.filler),
+    "Border Art - holoX": CGItemData(2510, ItemClassification.filler),
+    "Border Art - IRyS": CGItemData(2509, ItemClassification.filler),
+    "Border Art - Myth": CGItemData(2516, ItemClassification.filler),
+    "Border Art - Fauna": CGItemData(2507, ItemClassification.filler),
+    "Border Art - id:entity": CGItemData(2511, ItemClassification.filler),
+    "Border Art - Ina": CGItemData(2508, ItemClassification.filler),
+    "Border Art - Sana": CGItemData(2519, ItemClassification.filler),
+    "Border Art - Souten ni Moyu": CGItemData(2520, ItemClassification.filler),
+    "Border Art - Moona": CGItemData(2514, ItemClassification.filler),
+    "Border Art - Mumei": CGItemData(2515, ItemClassification.filler),
+    "Border Art - Calli": CGItemData(2506, ItemClassification.filler),
+    "Border Art - Roboco-san": CGItemData(2518, ItemClassification.filler),
+    "Border Art - Baelz": CGItemData(2503, ItemClassification.filler),
+    "Border Art - Laplus": CGItemData(2513, ItemClassification.filler),
+    "Border Art - Korone": CGItemData(2512, ItemClassification.filler),
 
-item_time_unlock: CGItem = CGItem(1200, "World of Time", ItemClassification.progression)
-item_nature_unlock: CGItem = CGItem(1201, "World of Nature", ItemClassification.progression)
-item_space_unlock: CGItem = CGItem(1202, "World of Space", ItemClassification.progression)
-item_civ_unlock: CGItem = CGItem(1203, "World of Civilzation", ItemClassification.progression)
-item_chaos_unlock: CGItem = CGItem(1204, "World of Chaos", ItemClassification.progression)
-item_darkness_unlock: CGItem = CGItem(1205, "World of Darkness", ItemClassification.progression)
-item_alter_unlock: CGItem = CGItem(1206, "Alter Timeline", ItemClassification.progression)
+    "Storming the Sanctum": CGItemData(1101, ItemClassification.progression),
+    "The Top of Bell Tower": CGItemData(1102, ItemClassification.progression),
+    "The Battle of Bell Town": CGItemData(1104, ItemClassification.progression),
+    "The PolPol Express": CGItemData(1105, ItemClassification.progression),
+    "The Gravity of Time": CGItemData(1107, ItemClassification.progression),
+    "The Shattered Keep": CGItemData(1109, ItemClassification.progression),
+    "Call to Nature": CGItemData(1111, ItemClassification.progression),
+    "Autumn Harvest": CGItemData(1112, ItemClassification.progression),
+    "Wrath of Nature": CGItemData(1114, ItemClassification.progression),
+    "The Floating Islands": CGItemData(1115, ItemClassification.progression),
+    "Riding the Waves": CGItemData(1117, ItemClassification.progression),
+    "Chloe's Beach Race": CGItemData(1118, ItemClassification.progression),
+    "Rebuilding the Lost City": CGItemData(1119, ItemClassification.progression),
+    "The Great Space Bake": CGItemData(1121, ItemClassification.progression),
+    "The Houshou Pirates": CGItemData(1123, ItemClassification.progression),
+    "Luknight of Darkness": CGItemData(1124, ItemClassification.progression),
+    "Ganmo's Grand Finale": CGItemData(1126, ItemClassification.progression),
+    "The Road to Civilization": CGItemData(1127, ItemClassification.progression),
+    "Roboco Strikes Back": CGItemData(1128, ItemClassification.progression),
+    "Path of Memories": CGItemData(1129, ItemClassification.progression),
+    "A Head Start": CGItemData(1131, ItemClassification.progression),
+    "The War Mind": CGItemData(1133, ItemClassification.progression),
+    "Caravan of Darkness": CGItemData(1135, ItemClassification.progression),
+    "Overclocking the Arcade": CGItemData(1136, ItemClassification.progression),
+    "Song of Light and Darkness": CGItemData(1138, ItemClassification.progression),
+    "Case Closed": CGItemData(1139, ItemClassification.progression),
+    "The KFP Games": CGItemData(1140, ItemClassification.progression),
+    "Another Time Traveler?": CGItemData(1141, ItemClassification.progression),
+    "The Space Between Worlds": CGItemData(1142, ItemClassification.progression),
+    "Solitude": CGItemData(1143, ItemClassification.progression),
+    "Entropy": CGItemData(1144, ItemClassification.progression),
+    "Gloom": CGItemData(1145, ItemClassification.progression),
+    "Despair": CGItemData(1146, ItemClassification.progression),
+    "Hope": CGItemData(1147, ItemClassification.progression),
+    "Her Time is Now": CGItemData(1148, ItemClassification.progression),
+    "The Final Ascent": CGItemData(1149, ItemClassification.progression),
+    "Steel on Steel": CGItemData(1150, ItemClassification.progression),
+    "Defending the Sanctum": CGItemData(1151, ItemClassification.progression),
+    "Eternity Sanctum": CGItemData(1152, ItemClassification.progression),
+    "The Starship ID": CGItemData(1153, ItemClassification.progression),
+    "Magic Resort": CGItemData(1154, ItemClassification.progression),
+    "The Funzone": CGItemData(1155, ItemClassification.progression),
+    "Castle Town": CGItemData(1156, ItemClassification.progression),
+    "The Bunker": CGItemData(1157, ItemClassification.progression),
+    "The Ancient Ones": CGItemData(1158, ItemClassification.progression),
+    "The Way Home": CGItemData(1159, ItemClassification.progression),
+    "Zero Seconds to Midnight": CGItemData(1161, ItemClassification.progression),
+}
 
-#For stages that don't have any unlocks associated (Bunkeronii, Intermission, etc.), might set them to filler
-item_stage_01: CGItem = CGItem(1101, "Storming the Sanctum", ItemClassification.progression)
-item_stage_02: CGItem = CGItem(1102, "The Top of Bell Tower", ItemClassification.progression)
-item_stage_04: CGItem = CGItem(1104, "The Battle of Bell Town", ItemClassification.progression)
-item_stage_05: CGItem = CGItem(1105, "The PolPol Express", ItemClassification.progression)
-item_stage_07: CGItem = CGItem(1107, "The Gravity of Time", ItemClassification.progression)
-item_stage_09: CGItem = CGItem(1109, "The Shattered Keep", ItemClassification.progression)
-item_stage_11: CGItem = CGItem(1111, "Call to Nature", ItemClassification.progression)
-item_stage_12: CGItem = CGItem(1112, "Autumn Harvest", ItemClassification.progression)
-item_stage_14: CGItem = CGItem(1114, "Wrath of Nature", ItemClassification.progression)
-item_stage_15: CGItem = CGItem(1115, "The Floating Islands", ItemClassification.progression)
-item_stage_17: CGItem = CGItem(1117, "Riding the Waves", ItemClassification.progression)
-item_stage_18: CGItem = CGItem(1118, "Chloe's Beach Race", ItemClassification.progression)
-item_stage_19: CGItem = CGItem(1119, "Rebuilding the Lost City", ItemClassification.progression)
-item_stage_21: CGItem = CGItem(1121, "The Great Space Bake", ItemClassification.progression)
-item_stage_23: CGItem = CGItem(1123, "The Houshou Pirates", ItemClassification.progression)
-item_stage_24: CGItem = CGItem(1124, "Luknight of Darkness", ItemClassification.progression)
-item_stage_26: CGItem = CGItem(1126, "Ganmo's Grand Finale", ItemClassification.progression)
-item_stage_27: CGItem = CGItem(1127, "The Road to Civilization", ItemClassification.progression)
-item_stage_28: CGItem = CGItem(1128, "Roboco Strikes Back", ItemClassification.progression)
-item_stage_29: CGItem = CGItem(1129, "Path of Memories", ItemClassification.progression)
-item_stage_31: CGItem = CGItem(1131, "A Head Start", ItemClassification.progression)
-item_stage_33: CGItem = CGItem(1133, "The War Mind", ItemClassification.progression)
-item_stage_35: CGItem = CGItem(1135, "Caravan of Darkness", ItemClassification.progression)
-item_stage_36: CGItem = CGItem(1136, "Overclocking the Arcade", ItemClassification.progression)
-item_stage_38: CGItem = CGItem(1138, "Song of Light and Darkness", ItemClassification.progression)
-item_stage_39: CGItem = CGItem(1139, "Case Closed", ItemClassification.progression)
-item_stage_40: CGItem = CGItem(1140, "The KFP Games", ItemClassification.progression)
-item_stage_41: CGItem = CGItem(1141, "Another Time Traveler?", ItemClassification.progression)
-item_stage_42: CGItem = CGItem(1142, "The Space Between Worlds", ItemClassification.progression)
-item_stage_43: CGItem = CGItem(1143, "Solitude", ItemClassification.progression)
-item_stage_44: CGItem = CGItem(1144, "Entropy", ItemClassification.progression)
-item_stage_45: CGItem = CGItem(1145, "Gloom", ItemClassification.progression)
-item_stage_46: CGItem = CGItem(1146, "Despair", ItemClassification.progression)
-item_stage_47: CGItem = CGItem(1147, "Hope", ItemClassification.progression)
-item_stage_48: CGItem = CGItem(1148, "Her Time is Now", ItemClassification.progression)
-item_stage_49: CGItem = CGItem(1149, "The Final Ascent", ItemClassification.progression)
-item_stage_50: CGItem = CGItem(1150, "Steel on Steel", ItemClassification.progression)
-item_stage_51: CGItem = CGItem(1151, "Defending the Sanctum", ItemClassification.progression)
-item_stage_52: CGItem = CGItem(1152, "Eternity Sanctum", ItemClassification.progression)
-item_stage_53: CGItem = CGItem(1153, "The Starship ID", ItemClassification.progression)
-item_stage_54: CGItem = CGItem(1154, "Magic Resort", ItemClassification.progression)
-item_stage_55: CGItem = CGItem(1155, "The Funzone", ItemClassification.progression)
-item_stage_56: CGItem = CGItem(1156, "Castle Town", ItemClassification.progression)
-item_stage_57: CGItem = CGItem(1157, "The Bunker", ItemClassification.progression)
-item_stage_58: CGItem = CGItem(1158, "The Ancient Ones", ItemClassification.progression)
-item_stage_59: CGItem = CGItem(1159, "The Way Home", ItemClassification.progression)
-item_stage_61: CGItem = CGItem(1161, "Zero Seconds to Midnight", ItemClassification.progression)
+world_unlock_items: Dict[str, CGItemData] = {
+    "World of Time": CGItemData(1200, ItemClassification.progression),
+    "World of Nature": CGItemData(1201, ItemClassification.progression),
+    "World of Space": CGItemData(1202, ItemClassification.progression),
+    "World of Civilzation": CGItemData(1203, ItemClassification.progression),
+    "World of Chaos": CGItemData(1204, ItemClassification.progression),
+    "World of Darkness": CGItemData(1205, ItemClassification.progression),
+    "Alter Timeline": CGItemData(1206, ItemClassification.progression),
+}
 
-def generate_item(player: int, cgItem: CGItem) -> Item:
-    item = Item(cgItem.name, cgItem.classification, cgItem.id, player)
-    item.game = "Chrono Gear"
+filler_items: Dict[str, CGItemData] = {
+    "CD - Chrono Gear": CGItemData(2301, ItemClassification.filler),
+    "CD - Her Time is Now (Intro Mix)": CGItemData(2302, ItemClassification.filler),
+    "CD - Take Your Time": CGItemData(2303, ItemClassification.filler),
+    "CD - Daydream (Tutorial Mix)": CGItemData(2304, ItemClassification.filler),
+    "CD - A Beginning": CGItemData(2305, ItemClassification.filler),
+    "CD - Bad Dream": CGItemData(2306, ItemClassification.filler),
+    "CD - Separation": CGItemData(2307, ItemClassification.filler),
+    "CD - Doorway to Nowhere": CGItemData(2308, ItemClassification.filler),
+    "CD - Eternal Ambition": CGItemData(2309, ItemClassification.filler),
+    "CD - Victory Theme": CGItemData(2310, ItemClassification.filler),
+    "CD - World Map": CGItemData(2311, ItemClassification.filler),
+    "CD - Bell Town": CGItemData(2312, ItemClassification.filler),
+    "CD - Bell Town Under": CGItemData(2313, ItemClassification.filler),
+    "CD - Unlucky Steps": CGItemData(2314, ItemClassification.filler),
+    "CD - Carnival Railway": CGItemData(2315, ItemClassification.filler),
+    "CD - Sands of Time": CGItemData(2316, ItemClassification.filler),
+    "CD - Jewel Cyclone": CGItemData(2317, ItemClassification.filler),
+    "CD - Jouya Repaint (Boss Mix)": CGItemData(2318, ItemClassification.filler),
+    "CD - Jouya Repaint (Talk Mix)": CGItemData(2319, ItemClassification.filler),
+    "CD - Cutscene - Council Meeting": CGItemData(2320, ItemClassification.filler),
+    "CD - Galaxy Gourmet": CGItemData(2321, ItemClassification.filler),
+    "CD - Sana's Theme": CGItemData(2322, ItemClassification.filler),
+    "CD - Starship ID": CGItemData(2323, ItemClassification.filler),
+    "CD - Cutscene - Space Traffic": CGItemData(2324, ItemClassification.filler),
+    "CD - Marine's Theme": CGItemData(2325, ItemClassification.filler),
+    "CD - Battleship Aquamarine": CGItemData(2326, ItemClassification.filler),
+    "CD - Bare Your Teeth": CGItemData(2327, ItemClassification.filler),
+    "CD - Ahoy?": CGItemData(2328, ItemClassification.filler),
+    "CD - Hoshinova Castle (Outer)": CGItemData(2329, ItemClassification.filler),
+    "CD - Hoshinova Castle": CGItemData(2330, ItemClassification.filler),
+    "CD - Alter Laplus Thoughts": CGItemData(2331, ItemClassification.filler),
+    "CD - The World Tree (Spring)": CGItemData(2332, ItemClassification.filler),
+    "CD - The World Tree (Summer)": CGItemData(2333, ItemClassification.filler),
+    "CD - The World Tree (Autumn)": CGItemData(2334, ItemClassification.filler),
+    "CD - The World Tree (Winter)": CGItemData(2335, ItemClassification.filler),
+    "CD - Magic Resort": CGItemData(2336, ItemClassification.filler),
+    "CD - Teatime": CGItemData(2337, ItemClassification.filler),
+    "CD - Sky Tops": CGItemData(2338, ItemClassification.filler),
+    "CD - Tidal Camp": CGItemData(2339, ItemClassification.filler),
+    "CD - Pekora's Theme": CGItemData(2340, ItemClassification.filler),
+    "CD - Depths of Atlantis": CGItemData(2341, ItemClassification.filler),
+    "CD - Wrath of Nature": CGItemData(2342, ItemClassification.filler),
+    "CD - Between Worlds": CGItemData(2343, ItemClassification.filler),
+    "CD - Alter Laplus Theme": CGItemData(2344, ItemClassification.filler),
+    "CD - Dear Highest Death": CGItemData(2345, ItemClassification.filler),
+    "CD - Dear Highest Death - Try Again": CGItemData(2346, ItemClassification.filler),
+    "CD - Reflection in Time": CGItemData(2347, ItemClassification.filler),
+    "CD - Town Square": CGItemData(2348, ItemClassification.filler),
+    "CD - Castle Road": CGItemData(2349, ItemClassification.filler),
+    "CD - Castle Siege": CGItemData(2350, ItemClassification.filler),
+    "CD - The Maze": CGItemData(2351, ItemClassification.filler),
+    "CD - Cursed Lands": CGItemData(2352, ItemClassification.filler),
+    "CD - Magitech Forge": CGItemData(2353, ItemClassification.filler),
+    "CD - -little bit-": CGItemData(2354, ItemClassification.filler),
+    "CD - Baelz's Theme": CGItemData(2355, ItemClassification.filler),
+    "CD - Highway of Dreams": CGItemData(2356, ItemClassification.filler),
+    "CD - The Funzone": CGItemData(2357, ItemClassification.filler),
+    "CD - Amelia's Theme": CGItemData(2358, ItemClassification.filler),
+    "CD - Ducky God Arcade": CGItemData(2359, ItemClassification.filler),
+    "CD - Symphonic Gallery": CGItemData(2360, ItemClassification.filler),
+    "CD - Kiara's Theme": CGItemData(2361, ItemClassification.filler),
+    "CD - KFP Stadium": CGItemData(2362, ItemClassification.filler),
+    "CD - Hurry Up": CGItemData(2363, ItemClassification.filler),
+    "CD - On the Case": CGItemData(2364, ItemClassification.filler),
+    "CD - Candle in the Dark": CGItemData(2365, ItemClassification.filler),
+    "CD - Alter Bell Town": CGItemData(2366, ItemClassification.filler),
+    "CD - Alter Hoshinova Castle": CGItemData(2367, ItemClassification.filler),
+    "CD - I Can't Reach You": CGItemData(2368, ItemClassification.filler),
+    "CD - Alter World Tree": CGItemData(2369, ItemClassification.filler),
+    "CD - Deep Cut": CGItemData(2370, ItemClassification.filler),
+    "CD - Alter Castle Road": CGItemData(2371, ItemClassification.filler),
+    "CD - Truth of Despair": CGItemData(2372, ItemClassification.filler),
+    "CD - Hand in Hand": CGItemData(2373, ItemClassification.filler),
+    "CD - Alter KFP Stadium": CGItemData(2374, ItemClassification.filler),
+    "CD - Her Time is Now (Dark Nest)": CGItemData(2375, ItemClassification.filler),
+    "CD - Tower of Darkness (Lobby)": CGItemData(2376, ItemClassification.filler),
+    "CD - Tower of Darkness (Prelude)": CGItemData(2377, ItemClassification.filler),
+    "CD - Tower of Darkness (Interior)": CGItemData(2378, ItemClassification.filler),
+    "CD - Tower of Darkness (Exterior)": CGItemData(2379, ItemClassification.filler),
+    "CD - Tower of Light": CGItemData(2380, ItemClassification.filler),
+    "CD - My Decaying Heart": CGItemData(2381, ItemClassification.filler),
+    "CD - Steel on Steel (Tower of Darknesss 3)": CGItemData(2382, ItemClassification.filler),
+    "CD - Zero Seconds to Midnight": CGItemData(2383, ItemClassification.filler),
+    "CD - IRyS's Theme": CGItemData(2384, ItemClassification.filler),
+    "CD - Chrono Gear Launch Trailer": CGItemData(2385, ItemClassification.filler),
+    "CD - Threads of Time": CGItemData(2386, ItemClassification.filler),
+    "CD - Daydreaming in Darkness": CGItemData(2387, ItemClassification.filler),
+
+    "Border Art - TimeRyS": CGItemData(2521, ItemClassification.filler),
+    "Border Art - Amelia": CGItemData(2501, ItemClassification.filler),
+    "Border Art - holoX": CGItemData(2510, ItemClassification.filler),
+    "Border Art - IRyS": CGItemData(2509, ItemClassification.filler),
+    "Border Art - Myth": CGItemData(2516, ItemClassification.filler),
+    "Border Art - Fauna": CGItemData(2507, ItemClassification.filler),
+    "Border Art - id:entity": CGItemData(2511, ItemClassification.filler),
+    "Border Art - Ina": CGItemData(2508, ItemClassification.filler),
+    "Border Art - Sana": CGItemData(2519, ItemClassification.filler),
+    "Border Art - Souten ni Moyu": CGItemData(2520, ItemClassification.filler),
+    "Border Art - Moona": CGItemData(2514, ItemClassification.filler),
+    "Border Art - Mumei": CGItemData(2515, ItemClassification.filler),
+    "Border Art - Calli": CGItemData(2506, ItemClassification.filler),
+    "Border Art - Roboco-san": CGItemData(2518, ItemClassification.filler),
+    "Border Art - Baelz": CGItemData(2503, ItemClassification.filler),
+    "Border Art - Laplus": CGItemData(2513, ItemClassification.filler),
+    "Border Art - Korone": CGItemData(2512, ItemClassification.filler),
+}
+
+def generate_item(world: ChronoGearWorld, name: str) -> Item:
+    item = CGItem(name, item_table[name].classification, item_table[name].id, world.player)
+
     return item
 
-def generate_items(player: int, cgItem: CGItem, count: int) -> list[Item]:
-    rtr = []
-    for _ in range(count):
-        rtr.append(generate_item(player, cgItem))
-    return rtr
+def generate_all_items(world: ChronoGearWorld):
+    itempool: list[Item] = []
+    for name, data in item_table:
+        itempool += world.create_item(name)
+    
+    if world.options.world_unlock_mode == 1:
+        for name, data in world_unlock_items:
+            itempool += world.create_item(name)
+    
+    item_count = len(itempool)
+    unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
+    #This should always be 0, but just making sure
+    needed_filler = unfilled_locations - item_count
+    itempool += [world.create_filler() for _ in range(needed_filler)]
 
-def generate_threads_of_time(player: int) -> list[Item]:
-    items : list[Item] = []
-    items.append(generate_items(player, item_thread_of_time1, 5))
-    items.append(generate_items(player, item_thread_of_time2, 5))
-    items.append(generate_items(player, item_thread_of_time3, 13))
-    items.append(generate_items(player, item_thread_of_space1, 4))
-    items.append(generate_items(player, item_thread_of_space2, 4))
-    items.append(generate_items(player, item_thread_of_nature, 4))
-    items.append(generate_items(player, item_thread_of_civ, 7))
-    items.append(generate_items(player, item_thread_of_chaos, 9))
-    return items
+def get_filler_name(world: ChronoGearWorld) -> str:
+    return filler_items.keys[world.random.randint(0, len(filler_items.keys) - 1)]
 
-def generate_tokens(player: int) -> list[Item]:
-    items : list[Item] = []
-    items.append(generate_items(player, item_golden_gear, 35))
-    items.append(generate_items(player, item_shackle, 5))
-    return items
-
-def generate_abilities(player:int) -> list[Item]:
-    items : list[Item] = []
-    items.append(generate_item(player, item_chrono_gear))
-    return items
-
-def generate_cds(player: int) -> list[Item]:
-    items : list[Item] = []
-    items.append(generate_item(player, item_cd_01))
-    items.append(generate_item(player, item_cd_02))
-    items.append(generate_item(player, item_cd_03))
-    items.append(generate_item(player, item_cd_04))
-    items.append(generate_item(player, item_cd_05))
-    items.append(generate_item(player, item_cd_06))
-    items.append(generate_item(player, item_cd_07))
-    items.append(generate_item(player, item_cd_08))
-    items.append(generate_item(player, item_cd_09))
-    items.append(generate_item(player, item_cd_10))
-    items.append(generate_item(player, item_cd_11))
-    items.append(generate_item(player, item_cd_12))
-    items.append(generate_item(player, item_cd_13))
-    items.append(generate_item(player, item_cd_14))
-    items.append(generate_item(player, item_cd_15))
-    items.append(generate_item(player, item_cd_16))
-    items.append(generate_item(player, item_cd_17))
-    items.append(generate_item(player, item_cd_18))
-    items.append(generate_item(player, item_cd_19))
-    items.append(generate_item(player, item_cd_20))
-    items.append(generate_item(player, item_cd_21))
-    items.append(generate_item(player, item_cd_22))
-    items.append(generate_item(player, item_cd_23))
-    items.append(generate_item(player, item_cd_24))
-    items.append(generate_item(player, item_cd_25))
-    items.append(generate_item(player, item_cd_26))
-    items.append(generate_item(player, item_cd_27))
-    items.append(generate_item(player, item_cd_28))
-    items.append(generate_item(player, item_cd_29))
-    items.append(generate_item(player, item_cd_30))
-    items.append(generate_item(player, item_cd_31))
-    items.append(generate_item(player, item_cd_32))
-    items.append(generate_item(player, item_cd_33))
-    items.append(generate_item(player, item_cd_34))
-    items.append(generate_item(player, item_cd_35))
-    items.append(generate_item(player, item_cd_36))
-    items.append(generate_item(player, item_cd_37))
-    items.append(generate_item(player, item_cd_38))
-    items.append(generate_item(player, item_cd_39))
-    items.append(generate_item(player, item_cd_40))
-    items.append(generate_item(player, item_cd_41))
-    items.append(generate_item(player, item_cd_42))
-    items.append(generate_item(player, item_cd_43))
-    items.append(generate_item(player, item_cd_44))
-    items.append(generate_item(player, item_cd_45))
-    items.append(generate_item(player, item_cd_46))
-    items.append(generate_item(player, item_cd_47))
-    items.append(generate_item(player, item_cd_48))
-    items.append(generate_item(player, item_cd_49))
-    items.append(generate_item(player, item_cd_50))
-    items.append(generate_item(player, item_cd_51))
-    items.append(generate_item(player, item_cd_52))
-    items.append(generate_item(player, item_cd_53))
-    items.append(generate_item(player, item_cd_54))
-    items.append(generate_item(player, item_cd_55))
-    items.append(generate_item(player, item_cd_56))
-    items.append(generate_item(player, item_cd_57))
-    items.append(generate_item(player, item_cd_58))
-    items.append(generate_item(player, item_cd_59))
-    items.append(generate_item(player, item_cd_60))
-    items.append(generate_item(player, item_cd_61))
-    items.append(generate_item(player, item_cd_62))
-    items.append(generate_item(player, item_cd_63))
-    items.append(generate_item(player, item_cd_64))
-    items.append(generate_item(player, item_cd_65))
-    items.append(generate_item(player, item_cd_66))
-    items.append(generate_item(player, item_cd_67))
-    items.append(generate_item(player, item_cd_68))
-    items.append(generate_item(player, item_cd_69))
-    items.append(generate_item(player, item_cd_70))
-    items.append(generate_item(player, item_cd_71))
-    items.append(generate_item(player, item_cd_72))
-    items.append(generate_item(player, item_cd_73))
-    items.append(generate_item(player, item_cd_74))
-    items.append(generate_item(player, item_cd_75))
-    items.append(generate_item(player, item_cd_76))
-    items.append(generate_item(player, item_cd_77))
-    items.append(generate_item(player, item_cd_78))
-    items.append(generate_item(player, item_cd_79))
-    items.append(generate_item(player, item_cd_80))
-    items.append(generate_item(player, item_cd_81))
-    items.append(generate_item(player, item_cd_82))
-    items.append(generate_item(player, item_cd_83))
-    items.append(generate_item(player, item_cd_84))
-    items.append(generate_item(player, item_cd_85))
-    items.append(generate_item(player, item_cd_86))
-    items.append(generate_item(player, item_cd_87))
-    return items
-
-def generate_border_arts(player: int) -> list[Item]:
-    items: list[Item] = []
-    items.append(generate_item(player, item_border_01))
-    items.append(generate_item(player, item_border_02))
-    items.append(generate_item(player, item_border_03))
-    items.append(generate_item(player, item_border_04))
-    items.append(generate_item(player, item_border_05))
-    items.append(generate_item(player, item_border_06))
-    items.append(generate_item(player, item_border_07))
-    items.append(generate_item(player, item_border_08))
-    items.append(generate_item(player, item_border_09))
-    items.append(generate_item(player, item_border_10))
-    items.append(generate_item(player, item_border_11))
-    items.append(generate_item(player, item_border_12))
-    items.append(generate_item(player, item_border_13))
-    items.append(generate_item(player, item_border_14))
-    items.append(generate_item(player, item_border_15))
-    items.append(generate_item(player, item_border_16))
-    items.append(generate_item(player, item_border_17))
-    return items
-
-def generate_world_unlocks(player: int) -> list[Item]:
-    items: list[Item] = []
-    #items.append(generate_item(player, item_time_unlock)) For now, always starting in Time
-    items.append(generate_item(player, item_nature_unlock))
-    items.append(generate_item(player, item_space_unlock))
-    items.append(generate_item(player, item_chaos_unlock))
-    items.append(generate_item(player, item_civ_unlock))
-    items.append(generate_item(player, item_darkness_unlock))
-    items.append(generate_item(player, item_alter_unlock))
-    return items
-
-#Need to figure out what I'm doing for first stage
-def generate_stage_unlocks(player: int) -> list[Item]:
-    items: list[Item] = []
-    items.append(generate_item(player, item_stage_01))
-    items.append(generate_item(player, item_stage_02))
-    items.append(generate_item(player, item_stage_04))
-    items.append(generate_item(player, item_stage_05))
-    items.append(generate_item(player, item_stage_07))
-    items.append(generate_item(player, item_stage_09))
-    items.append(generate_item(player, item_stage_11))
-    items.append(generate_item(player, item_stage_12))
-    items.append(generate_item(player, item_stage_14))
-    items.append(generate_item(player, item_stage_15))
-    items.append(generate_item(player, item_stage_17))
-    items.append(generate_item(player, item_stage_18))
-    items.append(generate_item(player, item_stage_19))
-    items.append(generate_item(player, item_stage_21))
-    items.append(generate_item(player, item_stage_23))
-    items.append(generate_item(player, item_stage_24))
-    items.append(generate_item(player, item_stage_26))
-    items.append(generate_item(player, item_stage_27))
-    items.append(generate_item(player, item_stage_28))
-    items.append(generate_item(player, item_stage_29))
-    items.append(generate_item(player, item_stage_31))
-    items.append(generate_item(player, item_stage_33))
-    items.append(generate_item(player, item_stage_35))
-    items.append(generate_item(player, item_stage_36))
-    items.append(generate_item(player, item_stage_38))
-    items.append(generate_item(player, item_stage_39))
-    items.append(generate_item(player, item_stage_40))
-    items.append(generate_item(player, item_stage_41))
-    items.append(generate_item(player, item_stage_42))
-    items.append(generate_item(player, item_stage_43))
-    items.append(generate_item(player, item_stage_44))
-    items.append(generate_item(player, item_stage_45))
-    items.append(generate_item(player, item_stage_46))
-    items.append(generate_item(player, item_stage_47))
-    items.append(generate_item(player, item_stage_48))
-    items.append(generate_item(player, item_stage_49))
-    items.append(generate_item(player, item_stage_50))
-    items.append(generate_item(player, item_stage_51))
-    #items.append(generate_item(player, item_stage_52)) Time hub, starting unlocked for now
-    items.append(generate_item(player, item_stage_53))
-    items.append(generate_item(player, item_stage_54))
-    items.append(generate_item(player, item_stage_55))
-    items.append(generate_item(player, item_stage_56))
-    items.append(generate_item(player, item_stage_57))
-    items.append(generate_item(player, item_stage_58))
-    items.append(generate_item(player, item_stage_59))
-    items.append(generate_item(player, item_stage_61))
-    return items
-
-def generate_items_for_mapping(player: int) -> list[Item]:
-    items : list[Item] = []
-    items.append(generate_item(player, item_golden_gear))
-    items.append(generate_item(player, item_shackle))
-
-    items.append(generate_item(player, item_thread_of_time1))
-    items.append(generate_item(player, item_thread_of_time2))
-    items.append(generate_item(player, item_thread_of_time3))
-    items.append(generate_item(player, item_thread_of_space1))
-    items.append(generate_item(player, item_thread_of_space2))
-    items.append(generate_item(player, item_thread_of_nature))
-    items.append(generate_item(player, item_thread_of_civ))
-    items.append(generate_item(player, item_thread_of_chaos))
-
-    items.append(generate_abilities(player))
-    items.append(generate_border_arts(player))
-    items.append(generate_cds(player))
-    items.append(generate_stage_unlocks(player))
-    items.append(generate_world_unlocks(player))
-
-    return items
+def get_items_for_mapping() -> Dict[str, CGItemData]:
+    return item_table | world_unlock_items

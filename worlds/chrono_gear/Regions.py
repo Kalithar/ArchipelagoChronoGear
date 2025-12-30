@@ -213,23 +213,23 @@ def add_locations(world: ChronoGearWorld):
                                        state.can_reach_location("Wrath of Nature - Golden Gear", world.player))
             else:
                 world.get_region("The Space Between Worlds").add_locations({name, data.id}, ChronoGearLocation)
-        elif name == "World Map - Unlock Case Closed":
+        elif data.id == 111000: #Unlock Case Closed
             region.add_locations({name, data.id}, ChronoGearLocation)
             set_rule(world.get_location(name), 
                      lambda state: state.can_reach_location("Roboco Strikes Back - Golden Gear", world.player) and 
                                    state.can_reach_location("Another Time Traveler? - Clear Level", world.player))
-        elif name == "World of Time - Unlock The Battle of Bell Town":
+        elif data.id == 121000: #Unlock The Battle of Bell Town
             region.add_locations({name, data.id}, ChronoGearLocation)
             set_rule(world.get_location(name), 
                      lambda state: state.can_reach_location("The PolPol Express - Golden Gear", world.player) and 
                                    state.can_reach_location("The Gravity of Time - Golden Gear", world.player) and
                                    state.can_reach_location("The Shattered Keep - Golden Gear", world.player))
-        elif name == "World of Nature - Unlock Rebuilding the Lost City":
+        elif data.id == 240000: #Unlock Rebuilding the Lost City
             region.add_locations({name, data.id}, ChronoGearLocation)
             set_rule(world.get_location(name), 
                      lambda state: state.can_reach_location("Riding the Waves - Golden Gear", world.player) and 
                                    state.can_reach_location("The Floating Islands - Golden Gear", world.player))
-        elif name == "World Map - Unlock The Space Between Worlds":
+        elif data.id == 610000: #Unlock The Space Between Worlds
             region.add_locations({name, data.id}, ChronoGearLocation)
             set_rule(world.get_location(name),
                      lambda state: state.can_reach_location("Ganmo's Grand Finale - Golden Gear", world.player) and 
@@ -241,6 +241,8 @@ def add_locations(world: ChronoGearWorld):
         region = world.get_region(data.region)
         region.add_locations({name, data.id}, ChronoGearLocation)
         world.get_location(name).place_locked_item(Items.CGItem(None, name, ItemClassification.progression))
+
+    #Add in world unlock locations if option is checked
 
 
     

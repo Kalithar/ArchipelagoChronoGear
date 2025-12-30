@@ -23,7 +23,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "Start Game - First CD": ChronoGearLocationData("World Map", 100201),
     "Start Game - Second CD": ChronoGearLocationData("World Map", 100202),
     "Start Game - Third CD": ChronoGearLocationData("World Map", 100203),
-    "Start Game - World of Time Unlock": ChronoGearLocationData("World Map", 1),
+    
     "Start Game - Storming the Sanctum Unlock": ChronoGearLocationData("World Map", 110000),
     
     #World of Time
@@ -354,7 +354,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "Hope - Unlock The Way Home": ChronoGearLocationData("Hope", 751000),
     "Hope - Laplus' Shackle": ChronoGearLocationData("Hope", 750100),
 
-    "The Way Home - Unlock World of Darkness": ChronoGearLocationData("The Way Home", 6),
+    
     "The Way Home - Unlock Her Time is Now": ChronoGearLocationData("The Way Home", 620000), 
     "The Way Home - Chrono Gear": ChronoGearLocationData("The Way Home", 751400),
 
@@ -362,8 +362,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     "Intermission - Unlock The Space Between Worlds": ChronoGearLocationData("The Space Between Worlds", 610000),
     #Where these actually end up depend on settings, but they're in the intermission in vanilla
-    "Intermission - Unlock World of Chaos": ChronoGearLocationData("Intermission", 5),
-    "Intermission - Unlock World of Civilization": ChronoGearLocationData("Intermission", 4),
+
     "Intermission - Unlock Caravan of Darkness": ChronoGearLocationData("Intermission", 510000),
     "Intermission - Unlock The Road to Civilization": ChronoGearLocationData("Intermission", 410000),
 
@@ -391,4 +390,12 @@ location_table: Dict[str, ChronoGearLocationData] = {
 event_location_table: Dict[str, ChronoGearLocationData] = {
     "Zero Seconds to Midnight - Clear Level": ChronoGearLocationData("Zero Seconds to Midnight", None),
     "Another Time Traveler? - Clear Level": ChronoGearLocationData("Another Time Traveler?", None),
+}
+
+world_unlock_location_table: Dict[str, ChronoGearLocationData] = {
+    "Start Game - Unlock World of Time": ChronoGearLocationData("World Map", 1),
+    #World of Space and Nature unlocks, don't know if I techincally have them on Battle or Council meeting
+    "The Way Home - Unlock World of Darkness": ChronoGearLocationData("The Way Home", 6),
+    "Intermission - Unlock World of Chaos": ChronoGearLocationData("Intermission", 5),
+    "Intermission - Unlock World of Civilization": ChronoGearLocationData("Intermission", 4),
 }

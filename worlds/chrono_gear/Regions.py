@@ -1,7 +1,7 @@
 from typing import TYPE_CHECKING
 
 from BaseClasses import Region, ItemClassification
-from worlds.chrono_gear.Locations import location_table, event_location_table, ChronoGearLocation
+from worlds.chrono_gear.Locations import location_table, event_location_table, world_unlock_location_table, ChronoGearLocation, ChronoGearLocationData
 from worlds.generic.Rules import set_rule
 from . import Items
 
@@ -203,7 +203,10 @@ def create_and_connect_regions(world: ChronoGearWorld):
 
 
 def add_locations(world: ChronoGearWorld):
-    for name, data in location_table:
+    locations: dict[str, ChronoGearLocationData] = location_table
+    if world.options.world_unlock_mode == 1:
+        locations = locations | world_unlock_location_table
+    for name, data in locations:
         region = world.get_region(data.region)
         if region.name == "Intermission":
             if world.options.intermission_world_unlocks == False:
@@ -233,7 +236,36 @@ def add_locations(world: ChronoGearWorld):
             region.add_locations({name, data.id}, ChronoGearLocation)
             set_rule(world.get_location(name),
                      lambda state: state.can_reach_location("Ganmo's Grand Finale - Golden Gear", world.player) and 
-                                       state.can_reach_location("Wrath of Nature - Golden Gear", world.player))
+                                   state.can_reach_location("Wrath of Nature - Golden Gear", world.player))
+        elif data.id == 100100: #Council Meeting Golden Gear
+            region.add_locations({name, data.id}, ChronoGearLocation)
+            set_rule(world.get_location(name),
+                     lambda state: state.can_reach_location("The Battle of Bell Town - Golden Gear", world.player))
+        elif data.id == 101100: #Secret Chamber Golden Gear
+            region.add_locations({name, data.id}, ChronoGearLocation)
+            set_rule(world.get_location(name),
+                     lambda state: state.has("Golden Gear", world.player, 34))
+        elif data.id == 100282: #Steel on Steel CD
+            region.add_locations({name, data.id}, ChronoGearLocation)
+            set_rule(world.get_location(name),
+                     lambda state: state.can_reach_location("Steel on Steel - Golden Gear", world.player))
+        elif data.id == 100283: #ZStM CD 1
+            region.add_locations({name, data.id}, ChronoGearLocation)
+            set_rule(world.get_location(name),
+                     lambda state: state.can_reach_location("Zero Seconds to Midnight - Golden Gear", world.player))
+        elif data.id == 100284: #ZStM CD 2
+            region.add_locations({name, data.id}, ChronoGearLocation)
+            set_rule(world.get_location(name),
+                     lambda state: state.can_reach_location("Zero Seconds to Midnight - Golden Gear", world.player))
+        elif data.id == 300100: #The Ancient Weapon Golden Gear
+            region.add_locations({name, data.id}, ChronoGearLocation)
+            set_rule(world.get_location(name),
+                     lambda state: state.can_reach_location("The Gravity of Time - Golden Gear", world.player))
+        elif data.id == 400254: #Roboco CD
+            region.add_locations({name, data.id}, ChronoGearLocation)
+            set_rule(world.get_location(name),
+                     lambda state: state.can_reach_location("Roboco Strikes Back - Golden Gear", world.player) and
+                                   state.can_reach_region("Magic Resort", world.player)) #Double check requirements on this
         else:
             region.add_locations({name, data.id}, ChronoGearLocation)
 
@@ -242,7 +274,6 @@ def add_locations(world: ChronoGearWorld):
         region.add_locations({name, data.id}, ChronoGearLocation)
         world.get_location(name).place_locked_item(Items.CGItem(None, name, ItemClassification.progression))
 
-    #Add in world unlock locations if option is checked
 
 
     

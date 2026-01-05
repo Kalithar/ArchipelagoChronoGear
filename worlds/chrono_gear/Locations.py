@@ -399,3 +399,6 @@ world_unlock_location_table: Dict[str, ChronoGearLocationData] = {
     "Intermission - Unlock World of Chaos": ChronoGearLocationData("Intermission", 5),
     "Intermission - Unlock World of Civilization": ChronoGearLocationData("Intermission", 4),
 }
+
+def get_locations_for_mapping() -> Dict[str, ChronoGearLocationData]:
+    return location_table | world_unlock_location_table

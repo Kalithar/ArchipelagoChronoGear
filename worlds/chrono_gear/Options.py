@@ -76,32 +76,33 @@ class IntermissionWorldUnlocks(Toggle):
 
     display_name = "World Unlocks on Intermission"
 
-class StartingWorld(Choice):
-    """
-    Choose the world you will start in.
-    This gives you both that world and its hub as starting items.
-    This all assumes that I actually can do this easily
-    (If someone that isn't me sees this, ping me on discord)
-    """
 
-    display_name = "Starting World"
-
-    option_time = 0
-    option_nature = 1
-    option_space = 2
-    option_civilization = 3
-    option_chaos = 4
-    option_alter = 5
-    option_random = 6
+#class StartingWorld(Choice):
+#    """
+#    Choose the world you will start in.
+#    This gives you both that world and its hub as starting items.
+#    This all assumes that I actually can do this easily
+#    (If someone that isn't me sees this, ping me on discord)
+#    """
+#
+#    display_name = "Starting World"
+#
+#    option_time = 0
+#    option_nature = 1
+#    option_space = 2
+#   option_civilization = 3
+#    option_chaos = 4
+#    option_alter = 5
+#    option_random = 6
     #No Darkness because it doesn't have a hub
-
-    default = option_time
+#
+#    default = option_time
 
 class EarlyChronoGear(Toggle):
     """
-    Controls whether the Chrono Gear is available in levels before you would normally obtain it.
-    If disabled, the Chrono Gear is only available in the levels it is normally available in (A Way Home and later).
-    If enabled, it is available in all levels once acquired.
+    Controls whether the Chrono Gear is usable in levels before you would normally obtain it.
+    If disabled, the Chrono Gear is only usable in the levels it is normally usable in (A Way Home and later).
+    If enabled, it is usable in all levels once acquired.
     """
 
     display_name = "Early Chrono Gear"
@@ -116,7 +117,7 @@ class ChronoGearOptions(PerGameCommonOptions):
     gear_hunt_requirement: GearHuntRequirement
     world_unlock_mode: WorldUnlockMode
     intermission_world_unlocks: IntermissionWorldUnlocks
-    starting_world: StartingWorld
+    #starting_world: StartingWorld
     steel_on_steel_shackle_requirement: SteelOnSteelShackleRequirement
     zero_seconds_to_midnight_shackle_requirement: ZStMShackleRequirement
     early_chrono_gear: EarlyChronoGear

@@ -16,14 +16,14 @@ item_table: Dict[str, CGItemData] = {
     "Golden Gear": CGItemData(2001, ItemClassification.progression_skip_balancing, 35),
     "Laplus' Shackle": CGItemData(2101, ItemClassification.progression, 5),
 
-    "Thread of Time - Time Page 1": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 5),
-    "Thread of Time - Time Page 2": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 5),
-    "Thread of Time - Time Page 3": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 13),
-    "Thread of Time - Space Page 1": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 4),
-    "Thread of Time - Sapce Page 2": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 4),
-    "Thread of Time - Nature": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 4),
-    "Thread of Time - Civilization": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 7),
-    "Thread of Time - Chaos": CGItemData(2211, ItemClassification.progression_deprioritized_skip_balancing, 9),
+    "Thread of Time - Time Page 1": CGItemData(2200, ItemClassification.progression_deprioritized_skip_balancing, 5),
+    "Thread of Time - Time Page 2": CGItemData(2201, ItemClassification.progression_deprioritized_skip_balancing, 5),
+    "Thread of Time - Time Page 3": CGItemData(2202, ItemClassification.progression_deprioritized_skip_balancing, 13),
+    "Thread of Time - Space Page 1": CGItemData(2220, ItemClassification.progression_deprioritized_skip_balancing, 4),
+    "Thread of Time - Sapce Page 2": CGItemData(2221, ItemClassification.progression_deprioritized_skip_balancing, 4),
+    "Thread of Time - Nature": CGItemData(2210, ItemClassification.progression_deprioritized_skip_balancing, 4),
+    "Thread of Time - Civilization": CGItemData(2230, ItemClassification.progression_deprioritized_skip_balancing, 7),
+    "Thread of Time - Chaos": CGItemData(2240, ItemClassification.progression_deprioritized_skip_balancing, 9),
 
     "Chrono Gear": CGItemData(2400, ItemClassification.progression),
 

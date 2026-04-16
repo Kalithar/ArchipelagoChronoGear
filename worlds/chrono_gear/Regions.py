@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import TYPE_CHECKING
+from typing import TYPE_CHECKING, Dict
 
 from BaseClasses import Region, ItemClassification
 from worlds.chrono_gear.Locations import location_table, event_location_table, world_unlock_location_table, ChronoGearLocation, ChronoGearLocationData
@@ -17,7 +17,7 @@ def make_and_fill_regions(world: ChronoGearWorld):
 
 def create_and_connect_regions(world: ChronoGearWorld):
     world_map = Region("World Map", world.player, world.multiworld)
-    world.multiworld.regions += world_map
+    world.multiworld.regions += [world_map]
     
     #World of Time
     world_of_time = Region("World of Time", world.player, world.multiworld)
@@ -192,7 +192,7 @@ def create_and_connect_regions(world: ChronoGearWorld):
         world_alter.connect(region, "Alter Timeline to " + region.name, lambda state: state.has(region.name, world.player))
 
     #World of Darkness
-    world_darkness.remove(world_darkness)
+    darkness_regions.remove(world_darkness)
     for region in darkness_regions:
         if region == final_ascent:
             world_darkness.connect(region, "World of Darkness to The Final Ascent", lambda state: state.has_all([region.name, "Chrono Gear"], world.player))
@@ -205,10 +205,10 @@ def create_and_connect_regions(world: ChronoGearWorld):
 
 
 def add_locations(world: ChronoGearWorld):
-    locations: dict[str, ChronoGearLocationData] = location_table
+    locations: Dict[str, ChronoGearLocationData] = location_table
     if world.options.world_unlock_mode == 1:
         locations = locations | world_unlock_location_table
-    for name, data in locations:
+    for name, data in locations.items():
         region = world.get_region(data.region)
         if region.name == "Intermission":
             if world.options.intermission_world_unlocks == False:

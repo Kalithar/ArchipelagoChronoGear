@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from BaseClasses import Item, ItemClassification
 from typing import NamedTuple, TYPE_CHECKING, Dict
 

@@ -1,5 +1,5 @@
-import math
-import string
+from collections.abc import Mapping
+from typing import Any
 from BaseClasses import Item, ItemClassification, MultiWorld, Tutorial
 from worlds.AutoWorld import WebWorld, World
 
@@ -12,6 +12,7 @@ class ChronoGearWebWorld(WebWorld):
     setup_en = Tutorial(
         "Setup Guide",
         "A guide to setting up the Chrono Gear Archipelago Multiworld Randomizer",
+        "English",
         "setup_en.md",
         "setup/en",
         ["Kalithar"],
@@ -30,8 +31,8 @@ class ChronoGearWorld(World):
     options_dataclass = cg_options.ChronoGearOptions
     options: cg_options.ChronoGearOptions
 
-    location_name_to_id = {name: data.id for name, data in Locations.get_locations_for_mapping()}
-    item_name_to_id = {name: data.id for name, data in Items.get_items_for_mapping()}
+    location_name_to_id = {name: data.id for name, data in Locations.get_locations_for_mapping().items()}
+    item_name_to_id = {name: data.id for name, data in Items.get_items_for_mapping().items()}
 
     origin_region_name = "World Map"
 
@@ -51,7 +52,7 @@ class ChronoGearWorld(World):
     def get_filler_item_name(self) -> str:
         return Items.get_filler_name(self)
     
-    def fill_slot_data(self) -> string.Mapping[str, math.Any]:
+    def fill_slot_data(self) -> Mapping[str, Any]:
         return self.options.as_dict(
             "goal_condition", "gear_hunt_requirement", "world_unlock_mode", "intermission_world_unlocks",
             "steel_on_steel_shackle_requirement", "zero_seconds_to_midnight_shackle_requirement", "early_chrono_gear"

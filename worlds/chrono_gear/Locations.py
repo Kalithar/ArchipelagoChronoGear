@@ -1,4 +1,4 @@
-#This is a staging file as I refactor how I'm making my locations. Goal is to make it extensible and hopefully not break my brain as much
+from __future__ import annotations
 
 from typing import TYPE_CHECKING, Dict, NamedTuple
 
@@ -395,7 +395,7 @@ event_location_table: Dict[str, ChronoGearLocationData] = {
 world_unlock_location_table: Dict[str, ChronoGearLocationData] = {
     "Start Game - Unlock World of Time": ChronoGearLocationData("World Map", 1),
     "The Battle of Bell Town - Unlock World of Nature": ChronoGearLocationData("The Battle of Bell Town", 2),
-    "The Battle of Bell Town - Unlock World of Nature": ChronoGearLocationData("The Battle of Bell Town", 3),
+    "The Battle of Bell Town - Unlock World of Space": ChronoGearLocationData("The Battle of Bell Town", 3),
     "The Way Home - Unlock World of Darkness": ChronoGearLocationData("The Way Home", 6),
     "Intermission - Unlock World of Chaos": ChronoGearLocationData("Intermission", 5),
     "Intermission - Unlock World of Civilization": ChronoGearLocationData("Intermission", 4),

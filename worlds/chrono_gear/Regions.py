@@ -265,6 +265,7 @@ def add_locations(world: ChronoGearWorld):
             region.add_locations({name, data.id}, ChronoGearLocation)
             set_rule(world.get_location(name),
                      lambda state: state.can_reach_location("Roboco Strikes Back - Golden Gear", world.player) and
+                                   state.can_reach_location("Another Time Traveler? - Clear Level", world.player) and
                                    state.can_reach_region("Magic Resort", world.player)) #Double check requirements on this
         else:
             region.add_locations({name, data.id}, ChronoGearLocation)

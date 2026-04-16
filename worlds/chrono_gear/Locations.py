@@ -394,7 +394,8 @@ event_location_table: Dict[str, ChronoGearLocationData] = {
 
 world_unlock_location_table: Dict[str, ChronoGearLocationData] = {
     "Start Game - Unlock World of Time": ChronoGearLocationData("World Map", 1),
-    #World of Space and Nature unlocks, don't know if I techincally have them on Battle or Council meeting
+    "The Battle of Bell Town - Unlock World of Nature": ChronoGearLocationData("The Battle of Bell Town", 2),
+    "The Battle of Bell Town - Unlock World of Nature": ChronoGearLocationData("The Battle of Bell Town", 3),
     "The Way Home - Unlock World of Darkness": ChronoGearLocationData("The Way Home", 6),
     "Intermission - Unlock World of Chaos": ChronoGearLocationData("Intermission", 5),
     "Intermission - Unlock World of Civilization": ChronoGearLocationData("Intermission", 4),

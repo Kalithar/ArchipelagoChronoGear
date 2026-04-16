@@ -72,6 +72,7 @@ class IntermissionWorldUnlocks(Toggle):
     Controls where the checks for the worlds of Civilization and Chaos are.
     If enabled, the checks will be from completing the intermission (The Space Between Worlds).
     If disabled, the checks will be after completing the boss levels of Nature and Space. 
+    Does nothing if World Unlock Mode is set to automatic.
     """
 
     display_name = "World Unlocks on Intermission"

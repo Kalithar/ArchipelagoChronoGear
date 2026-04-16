@@ -39,7 +39,7 @@ class ChronoGearWorld(World):
         Regions.make_and_fill_regions(self)
 
     def set_rules(self) -> None:
-        #I do this all in Regions, which might be bad practice
+        #I do this all in Regions, which I will be changing in the future
         return
     
     def create_items(self) -> None:

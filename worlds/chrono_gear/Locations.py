@@ -317,7 +317,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     #Symphonic Gallery
 
-    "Song of Light and Darkness - Unlock The KFP Games": ChronoGearLocationData("Song of Light and Darkness", 530000),
+    "Song of Light and Darkness - Unlock The KFP Games": ChronoGearLocationData("Song of Light and Darkness", 540000),
     "Song of Light and Darkness - Golden Gear": ChronoGearLocationData("Song of Light and Darkness", 530100),
     "Song of Light and Darkness - CD in top right split path": ChronoGearLocationData("Song of Light and Darkness", 530260),
     "Song of Light and Darkness - Thread of Time in time stop before warp gate": ChronoGearLocationData("Song of Light and Darkness", 530319),

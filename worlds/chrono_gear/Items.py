@@ -22,7 +22,7 @@ item_table: Dict[str, CGItemData] = {
     "Thread of Time - Time Page 2": CGItemData(2201, ItemClassification.progression_deprioritized_skip_balancing, 5),
     "Thread of Time - Time Page 3": CGItemData(2202, ItemClassification.progression_deprioritized_skip_balancing, 13),
     "Thread of Time - Space Page 1": CGItemData(2220, ItemClassification.progression_deprioritized_skip_balancing, 4),
-    "Thread of Time - Sapce Page 2": CGItemData(2221, ItemClassification.progression_deprioritized_skip_balancing, 4),
+    "Thread of Time - Space Page 2": CGItemData(2221, ItemClassification.progression_deprioritized_skip_balancing, 4),
     "Thread of Time - Nature": CGItemData(2210, ItemClassification.progression_deprioritized_skip_balancing, 4),
     "Thread of Time - Civilization": CGItemData(2230, ItemClassification.progression_deprioritized_skip_balancing, 7),
     "Thread of Time - Chaos": CGItemData(2240, ItemClassification.progression_deprioritized_skip_balancing, 9),
@@ -173,7 +173,7 @@ item_table: Dict[str, CGItemData] = {
     "The Final Ascent": CGItemData(1149, ItemClassification.progression),
     "Steel on Steel": CGItemData(1150, ItemClassification.progression),
     "Defending the Sanctum": CGItemData(1151, ItemClassification.progression),
-    "Eternity Sanctum": CGItemData(1152, ItemClassification.progression),
+    #"Eternity Sanctum": CGItemData(1152, ItemClassification.progression), Not in for now until starting world randomization
     "The Starship ID": CGItemData(1153, ItemClassification.progression),
     "Magic Resort": CGItemData(1154, ItemClassification.progression),
     "The Funzone": CGItemData(1155, ItemClassification.progression),
@@ -185,10 +185,10 @@ item_table: Dict[str, CGItemData] = {
 }
 
 world_unlock_items: Dict[str, CGItemData] = {
-    "World of Time": CGItemData(1200, ItemClassification.progression),
+    #"World of Time": CGItemData(1200, ItemClassification.progression), Not in for now until starting world randomization
     "World of Nature": CGItemData(1201, ItemClassification.progression),
     "World of Space": CGItemData(1202, ItemClassification.progression),
-    "World of Civilzation": CGItemData(1203, ItemClassification.progression),
+    "World of Civilization": CGItemData(1203, ItemClassification.progression),
     "World of Chaos": CGItemData(1204, ItemClassification.progression),
     "World of Darkness": CGItemData(1205, ItemClassification.progression),
     "Alter Timeline": CGItemData(1206, ItemClassification.progression),
@@ -303,18 +303,21 @@ filler_items: Dict[str, CGItemData] = {
 }
 
 def generate_item(world: ChronoGearWorld, name: str) -> Item:
-    item = CGItem(name, item_table[name].classification, item_table[name].id, world.player)
+    all_items = item_table | world_unlock_items
+
+    item = CGItem(name, all_items[name].classification, all_items[name].id, world.player)
 
     return item
 
 def generate_all_items(world: ChronoGearWorld):
     itempool: list[Item] = []
-    for name, data in item_table:
-        itempool += world.create_item(name)
+    for name, data in item_table.items():
+        for i in range(data.max_quantity):
+            itempool += [world.create_item(name)]
     
     if world.options.world_unlock_mode == 1:
-        for name, data in world_unlock_items:
-            itempool += world.create_item(name)
+        for name, data in world_unlock_items.items():
+            itempool += [world.create_item(name)]
     
     item_count = len(itempool)
     unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
@@ -322,8 +325,10 @@ def generate_all_items(world: ChronoGearWorld):
     needed_filler = unfilled_locations - item_count
     itempool += [world.create_filler() for _ in range(needed_filler)]
 
+    world.multiworld.itempool += itempool
+
 def get_filler_name(world: ChronoGearWorld) -> str:
-    return filler_items.keys[world.random.randint(0, len(filler_items.keys) - 1)]
+    return list(filler_items)[world.random.randint(0, len(filler_items.keys()) - 1)]
 
 def get_items_for_mapping() -> Dict[str, CGItemData]:
     return item_table | world_unlock_items

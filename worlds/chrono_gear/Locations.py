@@ -24,7 +24,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "Start Game - Second CD": ChronoGearLocationData("World Map", 100202),
     "Start Game - Third CD": ChronoGearLocationData("World Map", 100203),
     
-    "Start Game - Storming the Sanctum Unlock": ChronoGearLocationData("World Map", 110000),
+    #"Start Game - Storming the Sanctum Unlock": ChronoGearLocationData("World Map", 110000),
     
     #World of Time
 
@@ -393,7 +393,7 @@ event_location_table: Dict[str, ChronoGearLocationData] = {
 }
 
 world_unlock_location_table: Dict[str, ChronoGearLocationData] = {
-    "Start Game - Unlock World of Time": ChronoGearLocationData("World Map", 1),
+    #"Start Game - Unlock World of Time": ChronoGearLocationData("World Map", 1),
     "The Battle of Bell Town - Unlock World of Nature": ChronoGearLocationData("The Battle of Bell Town", 2),
     "The Battle of Bell Town - Unlock World of Space": ChronoGearLocationData("The Battle of Bell Town", 3),
     "The Way Home - Unlock World of Darkness": ChronoGearLocationData("The Way Home", 6),

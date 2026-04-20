@@ -280,6 +280,14 @@ def add_locations(world: ChronoGearWorld):
         region.add_locations({name: data.id}, ChronoGearLocation)
         world.get_location(name).place_locked_item(Items.CGItem(name, ItemClassification.progression, None, world.player))
 
+    if world.options.goal_condition == 0:
+        world.get_region("Steel on Steel").add_event("Clear Steel on Steel", "Victory")
+        world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
+    elif world.options.goal_condition == 1:
+        world.get_region("Zero Seconds to Midnight").add_event("Clear Zero Seconds to Midnight", "Victory")
+        world.multiworld.completion_condition[world.player] = lambda state: state.has("Victory", world.player)
+    else:
+        world.multiworld.completion_condition[world.player] = lambda state: state.has("Golden Gear", world.player, world.options.gear_hunt_requirement)
 
 
     

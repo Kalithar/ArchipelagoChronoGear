@@ -58,7 +58,6 @@ class WorldUnlockMode(Choice):
     Changes how the overall worlds are unlocked.
     Automatic unlocks worlds whenever a stage in that world is unlocked.
     Item adds the worlds as items to the pool that need to be obtained before those worlds are accessible.
-    Regardless of choice here, the alter timeline also requires the Chrono Gear.
     """
     display_name = "World Unlock Mode"
 

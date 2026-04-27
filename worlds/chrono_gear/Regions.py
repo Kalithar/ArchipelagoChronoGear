@@ -5,7 +5,6 @@ from typing import TYPE_CHECKING, Dict
 from BaseClasses import Region, ItemClassification
 from worlds.chrono_gear.Locations import location_table, event_location_table, world_unlock_location_table, ChronoGearLocation, ChronoGearLocationData
 from rule_builder.rules import Has, HasAllCounts, HasAll, CanReachLocation
-from worlds.generic.Rules import set_rule
 from . import Items
 
 if TYPE_CHECKING:
@@ -125,13 +124,13 @@ def create_and_connect_regions(world: ChronoGearWorld):
     #World Map
     
     if(world.options.world_unlock_mode == 1):
-        world_map.connect(world_of_time, "World Map to World of Time") # , Has("World of Time", world.player)
-        world_map.connect(world_of_nature, "World Map to World of Nature", Has("World of Nature", world.player))
-        world_map.connect(world_of_space, "World Map to World of Space", Has("World of Space", world.player))
-        world_map.connect(world_of_civ, "World Map to World of Civilization", Has("World of Civilization", world.player))
-        world_map.connect(world_of_chaos, "World Map to World of Chaos", Has("World of Chaos", world.player))
-        world_map.connect(world_alter, "World Map to Alter Timeline", Has("Alter Timeline", world.player))
-        world_map.connect(world_darkness, "World Map to World of Darkness", Has("World of Darkness", world.player))
+        world_map.connect(world_of_time, "World Map to World of Time") # , Has("World of Time")
+        world_map.connect(world_of_nature, "World Map to World of Nature", Has("World of Nature"))
+        world_map.connect(world_of_space, "World Map to World of Space", Has("World of Space"))
+        world_map.connect(world_of_civ, "World Map to World of Civilization", Has("World of Civilization"))
+        world_map.connect(world_of_chaos, "World Map to World of Chaos", Has("World of Chaos"))
+        world_map.connect(world_alter, "World Map to Alter Timeline", Has("Alter Timeline"))
+        world_map.connect(world_darkness, "World Map to World of Darkness", Has("World of Darkness"))
     else:
         world_map.connect(world_of_time, "World Map to World of Time")
         world_map.connect(world_of_nature, "World Map to World of Nature")
@@ -145,66 +144,66 @@ def create_and_connect_regions(world: ChronoGearWorld):
     time_regions.remove(world_of_time)
     for region in time_regions:
         if region == time_shop_1:
-            time_hub.connect(region, "Eternity Sanctum to Time Shop Page 1", Has("Thread of Time - Time Page 1", world.player, 5))
+            time_hub.connect(region, "Eternity Sanctum to Time Shop Page 1", Has("Thread of Time - Time Page 1", 5))
         elif region == time_shop_2:
-            time_hub.connect(region, "Eternity Sanctum to Time Shop Page 2", HasAllCounts({"Thread of Time - Time Page 2": 5, "Golden Gear": 7}, world.player)) 
+            time_hub.connect(region, "Eternity Sanctum to Time Shop Page 2", HasAllCounts({"Thread of Time - Time Page 2": 5, "Golden Gear": 7})) 
         elif region == time_shop_3:
-            time_hub.connect(region, "Eternity Sanctum to Time Shop Page 3", HasAllCounts({"Thread of Time - Time Page 3": 13, "Golden Gear": 32}, world.player))
+            time_hub.connect(region, "Eternity Sanctum to Time Shop Page 3", HasAllCounts({"Thread of Time - Time Page 3": 13, "Golden Gear": 32}))
         elif region == time_hub:
             world_of_time.connect(region, "World of Time to Eternity Sanctum") #To be removed/changed once starting world randomization is in
         else:
-            world_of_time.connect(region, "World of Time to " + region.name, Has(region.name, world.player))
+            world_of_time.connect(region, "World of Time to " + region.name, Has(region.name))
     
     #World of Nature
     nature_regions.remove(world_of_nature)
     for region in nature_regions:
         if region == nature_shop:
-            nature_hub.connect(region, "Magic Resort to Nature Shop", Has("Thread of Time - Nature", world.player, 4))
+            nature_hub.connect(region, "Magic Resort to Nature Shop", Has("Thread of Time - Nature", 4))
         else:
-            world_of_nature.connect(region, "World of Nature to " + region.name, Has(region.name, world.player))
+            world_of_nature.connect(region, "World of Nature to " + region.name, Has(region.name))
     
     #World of Space
     space_regions.remove(world_of_space)
     for region in space_regions:
         if region == space_shop_1:
-            space_hub.connect(region, "Starship ID to Space Shop Page 1", Has("Thread of Time - Space Page 1", world.player, 4))
+            space_hub.connect(region, "Starship ID to Space Shop Page 1", Has("Thread of Time - Space Page 1", 4))
         elif region == space_shop_2:
-            space_hub.connect(region, "Starship ID to Space Shop Page 2", HasAllCounts({"Thread of Time - Space Page 2": 4, "Golden Gear": 17}, world.player))
+            space_hub.connect(region, "Starship ID to Space Shop Page 2", HasAllCounts({"Thread of Time - Space Page 2": 4, "Golden Gear": 17}))
         else:
-            world_of_space.connect(region, "World of Space to " + region.name, Has(region.name, world.player))
+            world_of_space.connect(region, "World of Space to " + region.name, Has(region.name))
     
     #World of Civ
     civ_regions.remove(world_of_civ)
     for region in civ_regions:
         if region == civ_shop:
-            civ_hub.connect(region, "Town Square to Civilization Shop", Has("Thread of Time - Civilization", world.player, 7))
+            civ_hub.connect(region, "Town Square to Civilization Shop", Has("Thread of Time - Civilization", 7))
         else:
-            world_of_civ.connect(region, "World of Civilization to " + region.name, Has(region.name, world.player))
+            world_of_civ.connect(region, "World of Civilization to " + region.name, Has(region.name))
     
     #World of Chaos
     chaos_regions.remove(world_of_chaos)
     for region in chaos_regions:
         if region == chaos_shop:
-            chaos_hub.connect(region, "The Funzone to Chaos Shop", Has("Thread of Time - Chaos", world.player, 9))
+            chaos_hub.connect(region, "The Funzone to Chaos Shop", Has("Thread of Time - Chaos", 9))
         else:
-            world_of_chaos.connect(region, "World of Chaos to " + region.name, Has(region.name, world.player))
+            world_of_chaos.connect(region, "World of Chaos to " + region.name, Has(region.name))
     
     #Alter Timeline
     alter_regions.remove(world_alter)
     for region in alter_regions:
-        world_alter.connect(region, "Alter Timeline to " + region.name, Has(region.name, world.player))
+        world_alter.connect(region, "Alter Timeline to " + region.name, Has(region.name))
 
     #World of Darkness
     darkness_regions.remove(world_darkness)
     for region in darkness_regions:
         if region == final_ascent:
-            world_darkness.connect(region, "World of Darkness to The Final Ascent", HasAll([region.name, "Chrono Gear"], world.player))
+            world_darkness.connect(region, "World of Darkness to The Final Ascent", HasAll(region.name, "Chrono Gear"))
         elif region == steel_steel:
-            world_darkness.connect(region, "World of Darkness to Steel on Steel", HasAllCounts({region.name: 1, "Laplus' Shackle": world.options.steel_on_steel_shackle_requirement, "Chrono Gear": 1}, world.player))
+            world_darkness.connect(region, "World of Darkness to Steel on Steel", HasAllCounts({region.name: 1, "Laplus' Shackle": world.options.steel_on_steel_shackle_requirement.value, "Chrono Gear": 1}))
         elif region == zstm:
-            world_darkness.connect(region, "World of Darkness to Zero Seconds to Midnight", HasAllCounts({region.name: 1, "Laplus' Shackle": world.options.zero_seconds_to_midnight_shackle_requirement, "Chrono Gear": 1}, world.player))
+            world_darkness.connect(region, "World of Darkness to Zero Seconds to Midnight", HasAllCounts({region.name: 1, "Laplus' Shackle": world.options.zero_seconds_to_midnight_shackle_requirement.value, "Chrono Gear": 1}))
         else:
-            world_darkness.connect(region, "World of Darkness to " + region.name, Has(region.name, world.player))
+            world_darkness.connect(region, "World of Darkness to " + region.name, Has(region.name))
 
 
 def add_locations(world: ChronoGearWorld):
@@ -215,80 +214,16 @@ def add_locations(world: ChronoGearWorld):
         if data.region == "Intermission":
             if world.options.intermission_world_unlocks == False:
                 world.get_region("World Map").add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name), 
-                         CanReachLocation("Ganmo's Grand Finale - Golden Gear", world.player) & 
-                         CanReachLocation("Wrath of Nature - Golden Gear", world.player))
             else:
                 world.get_region("The Space Between Worlds").add_locations({name: data.id}, ChronoGearLocation)
         else:
             region = world.get_region(data.region)
-            if data.id == 111000: #Unlock Case Closed
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name), 
-                         CanReachLocation("Roboco Strikes Back - Golden Gear", world.player) & 
-                         CanReachLocation("Another Time Traveler? - Clear Level", world.player))
-            elif data.id == 121000: #Unlock The Battle of Bell Town
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name), 
-                         CanReachLocation("The PolPol Express - Golden Gear", world.player) & 
-                         CanReachLocation("The Gravity of Time - Golden Gear", world.player) &
-                         CanReachLocation("The Shattered Keep - Golden Gear", world.player))
-            elif data.id == 240000: #Unlock Rebuilding the Lost City
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name), 
-                         CanReachLocation("Riding the Waves - Golden Gear", world.player) & 
-                         CanReachLocation("The Floating Islands - Golden Gear", world.player))
-            elif data.id == 610000: #Unlock The Space Between Worlds
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("Ganmo's Grand Finale - Golden Gear", world.player) & 
-                         CanReachLocation("Wrath of Nature - Golden Gear", world.player))
-            elif data.id == 100100: #Council Meeting Golden Gear
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("The Battle of Bell Town - Golden Gear", world.player))
-            elif data.id == 101100: #Secret Chamber Golden Gear
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("Golden Gear", world.player, 34))
-            elif data.id == 100282: #Steel on Steel CD
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("Steel on Steel - Unlock Zero Seconds to Midnight", world.player))
-            elif data.id == 100283: #ZStM CD 1
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("Zero Seconds to Midnight - Clear Level", world.player))
-            elif data.id == 100284: #ZStM CD 2
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("Zero Seconds to Midnight - Clear Level", world.player))
-            elif data.id == 300100: #The Ancient Weapon Golden Gear
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("The Gravity of Time - Golden Gear", world.player))
-            elif data.id == 400254: #Roboco CD
-                region.add_locations({name: data.id}, ChronoGearLocation)
-                set_rule(world.get_location(name),
-                         CanReachLocation("Roboco Strikes Back - Golden Gear", world.player) &
-                         CanReachLocation("Another Time Traveler? - Clear Level", world.player) &
-                         CanReachLocation("Magic Resort", world.player))
-            else:
-                region.add_locations({name: data.id}, ChronoGearLocation)
+            region.add_locations({name: data.id}, ChronoGearLocation)
 
     for name, data in event_location_table.items():
         region = world.get_region(data.region)
         region.add_locations({name: data.id}, ChronoGearLocation)
         world.get_location(name).place_locked_item(Items.CGItem(name, ItemClassification.progression, None, world.player))
-
-    if world.options.goal_condition == 0:
-        world.get_region("Steel on Steel").add_event("Clear Steel on Steel", "Victory")
-        world.multiworld.completion_condition[world.player] = Has("Victory", world.player)
-    elif world.options.goal_condition == 1:
-        world.get_region("Zero Seconds to Midnight").add_event("Clear Zero Seconds to Midnight", "Victory")
-        world.multiworld.completion_condition[world.player] = Has("Victory", world.player)
-    else:
-        world.multiworld.completion_condition[world.player] = Has("Golden Gear", world.player, world.options.gear_hunt_requirement)
 
 
     

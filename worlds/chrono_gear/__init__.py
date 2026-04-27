@@ -4,7 +4,7 @@ from BaseClasses import Item, ItemClassification, MultiWorld, Tutorial
 from worlds.AutoWorld import WebWorld, World
 
 from . import Options as cg_options
-from . import Items, Locations, Regions
+from . import Items, Locations, Regions, Rules
 
 class ChronoGearWebWorld(WebWorld):
     game = "Chrono Gear"
@@ -40,8 +40,7 @@ class ChronoGearWorld(World):
         Regions.make_and_fill_regions(self)
 
     def set_rules(self) -> None:
-        #I do this all in Regions, which I will be changing in the future
-        return
+        Rules.setAllRules(self)
     
     def create_items(self) -> None:
         Items.generate_all_items(self)

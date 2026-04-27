@@ -174,10 +174,10 @@ item_table: Dict[str, CGItemData] = {
     "Steel on Steel": CGItemData(1150, ItemClassification.progression),
     "Defending the Sanctum": CGItemData(1151, ItemClassification.progression),
     #"Eternity Sanctum": CGItemData(1152, ItemClassification.progression), Not in for now until starting world randomization
-    "The Starship ID": CGItemData(1153, ItemClassification.progression),
+    "Starship ID": CGItemData(1153, ItemClassification.progression),
     "Magic Resort": CGItemData(1154, ItemClassification.progression),
     "The Funzone": CGItemData(1155, ItemClassification.progression),
-    "Castle Town": CGItemData(1156, ItemClassification.progression),
+    "Town Square": CGItemData(1156, ItemClassification.progression),
     "The Bunker": CGItemData(1157, ItemClassification.progression),
     "The Ancient Ones": CGItemData(1158, ItemClassification.progression),
     "The Way Home": CGItemData(1159, ItemClassification.progression),

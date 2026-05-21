@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import TYPE_CHECKING, Dict
 
-from rule_builder.rules import Has, CanReachLocation, CanReachRegion
+from rule_builder.rules import Has, CanReachLocation, CanReachRegion, HasAllCounts
 from worlds.chrono_gear.Locations import location_table, event_location_table, world_unlock_location_table, ChronoGearLocation, ChronoGearLocationData
 
 if TYPE_CHECKING:
@@ -45,7 +45,8 @@ def setLocationRules(world: ChronoGearWorld) -> None:
                         CanReachLocation("The Battle of Bell Town - Golden Gear"))
             elif data.id == 101100: #Secret Chamber Golden Gear
                 world.set_rule(world.get_location(name),
-                        Has("Golden Gear", 34))
+                        Has("Golden Gear", 33) &
+                        HasAllCounts({"Zero Seconds to Midnight": 1, "Laplus' Shackle": world.options.zero_seconds_to_midnight_shackle_requirement.value}))
             elif data.id == 100282: #Steel on Steel CD
                 world.set_rule(world.get_location(name),
                         CanReachLocation("Steel on Steel - Unlock Zero Seconds to Midnight"))
@@ -73,4 +74,4 @@ def setCompletionCondition(world: ChronoGearWorld) -> None:
         world.get_region("Zero Seconds to Midnight").add_event("Clear Zero Seconds to Midnight", "Victory")
         world.set_completion_rule(Has("Victory"))
     else:
-        world.set_completion_rule(Has("Golden Gear", world.options.gear_hunt_requirement))
+        world.set_completion_rule(Has("Golden Gear", world.options.gear_hunt_requirement.value))

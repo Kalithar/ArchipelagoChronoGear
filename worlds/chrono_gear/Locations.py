@@ -35,7 +35,8 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "Eternity Sanctum - Golden Gear from Secret Sanctum": ChronoGearLocationData("Eternity Sanctum", 101100),
     "Eternity Sanctum - Thread of Time near shop": ChronoGearLocationData("Eternity Sanctum", 100301),
     "Eternity Sanctum - Thread of Time on far right": ChronoGearLocationData("Eternity Sanctum", 100331),
-    "Eternity Sanctum - CD after Steel on Steel": ChronoGearLocationData("Eternity Sanctum", 100282),
+    "Eternity Sanctum - Right CD after Steel on Steel": ChronoGearLocationData("Eternity Sanctum", 100282),
+    "Eternity Sanctum - Left CD after Steel on Steel": ChronoGearLocationData("Eternity Sanctum", 100288),
     "Eternity Sanctum - Right CD after Zero Seconds to Midnight": ChronoGearLocationData("Eternity Sanctum", 100283),
     "Eternity Sanctum - Left CD after Zero Seconds to Midnight": ChronoGearLocationData("Eternity Sanctum", 100284),
     "Eternity Sanctum - CD near bookcase": ChronoGearLocationData("Eternity Sanctum", 100286),
@@ -97,6 +98,8 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "The Top of Bell Tower - Thread of Time above rolling platforms": ChronoGearLocationData("The Top of Bell Tower", 120370),
 
     "The Battle of Bell Town - Golden Gear": ChronoGearLocationData("The Battle of Bell Town", 121100),
+    "The Battle of Bell Town - Unlock Call to Nature": ChronoGearLocationData("The Battle of Bell Town", 210000),
+    "The Battle of Bell Town - Unlock The Great Space Bake": ChronoGearLocationData("The Battle of Bell Town", 310000),
 
     #Carnival Railway
 
@@ -144,10 +147,10 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     "Call to Nature - Unlock The Floating Islands": ChronoGearLocationData("Call to Nature", 220000),
     "Call to Nature - Unlock Riding the Waves": ChronoGearLocationData("Call to Nature", 230000),
-    "Call to Nature - Unlock Magic Resort": ChronoGearLocationData("Call to Nature", 200000),
+    "Call to Nature - Unlock Magic Resort": ChronoGearLocationData("Call to Nature", 20),
     "Call to Nature - Golden Gear": ChronoGearLocationData("Call to Nature", 210100),
     "Call to Nature - CD in first side room": ChronoGearLocationData("Call to Nature", 210232),
-    "Call to Nature - CD in summer hidden room": ChronoGearLocationData("Call to Nature", 213233),
+    "Call to Nature - CD in summer hidden room": ChronoGearLocationData("Call to Nature", 210233),
     "Call to Nature - Thread of Time at top of tree trunk": ChronoGearLocationData("Call to Nature", 210306),
 
     "Autumn Harvest - Golden Gear": ChronoGearLocationData("Autumn Harvest", 211100),
@@ -206,7 +209,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     #Galaxy Gourmet
 
-    "The Great Space Bake - Unlock Starship ID": ChronoGearLocationData("The Great Space Bake", 300000),
+    "The Great Space Bake - Unlock Starship ID": ChronoGearLocationData("The Great Space Bake", 30),
     "The Great Space Bake - Unlock The Houshou Pirates": ChronoGearLocationData("The Great Space Bake", 320000),
     "The Great Space Bake - Golden Gear": ChronoGearLocationData("The Great Space Bake", 310100),
     "The Great Space Bake - CD left of warp gate after first checkpoint": ChronoGearLocationData("The Great Space Bake", 310221),
@@ -250,7 +253,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     #Castle Road
 
-    "The Road to Civilization - Unlock Town Square": ChronoGearLocationData("The Road to Civilization", 400000),
+    "The Road to Civilization - Unlock Town Square": ChronoGearLocationData("The Road to Civilization", 40),
     "The Road to Civilization - Unlock Path of Memories": ChronoGearLocationData("The Road to Civilization", 420000),
     "The Road to Civilization - Golden Gear": ChronoGearLocationData("The Road to Civilization", 410100),
     "The Road to Civilization - CD at top of tall tower with Mumei glider": ChronoGearLocationData("The Road to Civilization", 410249),
@@ -301,7 +304,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     #Highway of Dreams
 
-    "Caravan of Darkness - Unlock The Funzone": ChronoGearLocationData("Caravan of Darkness", 500000),
+    "Caravan of Darkness - Unlock The Funzone": ChronoGearLocationData("Caravan of Darkness", 50),
     "Caravan of Darkness - Unlock Overclocking the Arcade": ChronoGearLocationData("Caravan of Darkness", 520000),
     "Caravan of Darkness - Golden Gear": ChronoGearLocationData("Caravan of Darkness", 510100),
     "Caravan of Darkness - CD above warp gate into upside down section": ChronoGearLocationData("Caravan of Darkness", 510256),
@@ -320,7 +323,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "Song of Light and Darkness - Unlock The KFP Games": ChronoGearLocationData("Song of Light and Darkness", 540000),
     "Song of Light and Darkness - Golden Gear": ChronoGearLocationData("Song of Light and Darkness", 530100),
     "Song of Light and Darkness - CD in top right split path": ChronoGearLocationData("Song of Light and Darkness", 530260),
-    "Song of Light and Darkness - Thread of Time in time stop before warp gate": ChronoGearLocationData("Song of Light and Darkness", 530319),
+    "Song of Light and Darkness - Thread of Time in bottom right path": ChronoGearLocationData("Song of Light and Darkness", 530319),
     "Song of Light and Darkness - Thread of Time above Hydra Block in final climb": ChronoGearLocationData("Song of Light and Darkness", 530334),
 
     #KFP Stadium
@@ -336,7 +339,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
 
     #Alter Timeline
 
-    "Solitude - Unlock The Bunker": ChronoGearLocationData("Solitude", 700000),
+    "Solitude - Unlock The Bunker": ChronoGearLocationData("Solitude", 70),
     "Solitude - Unlock Entropy": ChronoGearLocationData("Solitude", 720000),
     "Solitude - Laplus' Shackle": ChronoGearLocationData("Solitude", 710100),
 
@@ -349,7 +352,7 @@ location_table: Dict[str, ChronoGearLocationData] = {
     "Gloom - Laplus' Shackle": ChronoGearLocationData("Gloom", 730100),
 
     "Despair - Unlock Hope": ChronoGearLocationData("Despair", 750000),
-    "Despair - Laplus' Shackle": ChronoGearLocationData("Despair", 740100),
+    "Despair - Laplus' Shackle": ChronoGearLocationData("Despair", 740100), #Not an actual check the game gives you
 
     "Hope - Unlock The Way Home": ChronoGearLocationData("Hope", 751000),
     "Hope - Laplus' Shackle": ChronoGearLocationData("Hope", 750100),

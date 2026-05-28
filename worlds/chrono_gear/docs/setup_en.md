@@ -26,10 +26,17 @@ select the file you were using previously. Once you have a selected file, return
 new Archipelago option that is there. Enter your connection information in the appropriate fields, leaving Password
 blank if your server does not have one, and Connect. Once connected, you can start the game as normal.
 
+## Game Information
+
+### What is randomized?
+
+You can receive Golden Gears, Laplus' Shackles, CDs, border arts, Threads of Time (split by shop and by page), level 
+and world unlocks, and the Chrono Gear as items. Locations are checked when you normally receive any of these.
+
 ## FAQ
 
 ### I received items while I was offline, but I didn't get the pop up message for them once I opened the game
 
 The game treats the file as loaded from the moment you select it on the file select screen, and I don't currently have
 anything set up to treat the main menu as a different state. You did receive the items, but the pop up message is
-hidden until you actually get into game
+hidden until you actually get into game.

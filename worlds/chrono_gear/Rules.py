@@ -47,7 +47,7 @@ def setLocationRules(world: ChronoGearWorld) -> None:
                 world.set_rule(world.get_location(name),
                         Has("Golden Gear", 33) &
                         HasAllCounts({"Zero Seconds to Midnight": 1, "Laplus' Shackle": world.options.zero_seconds_to_midnight_shackle_requirement.value}))
-            elif data.id == 100282: #Steel on Steel CD
+            elif data.id == 100282 or data.id == 100288: #Steel on Steel CDs
                 world.set_rule(world.get_location(name),
                         CanReachLocation("Steel on Steel - Unlock Zero Seconds to Midnight"))
             elif data.id == 100283: #ZStM CD 1

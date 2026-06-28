@@ -64,6 +64,9 @@ def setLocationRules(world: ChronoGearWorld) -> None:
                         CanReachLocation("Roboco Strikes Back - Golden Gear") &
                         CanReachLocation("Another Time Traveler? - Clear Level") &
                         CanReachRegion("Magic Resort"))
+            elif data.id == 620000: #Complete A Way Home
+                world.set_rule(world.get_location(name),
+                               Has("Chrono Gear", 1))
     
 
 def setCompletionCondition(world: ChronoGearWorld) -> None:

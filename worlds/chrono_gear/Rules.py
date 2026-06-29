@@ -58,7 +58,8 @@ def setLocationRules(world: ChronoGearWorld) -> None:
                         CanReachLocation("Zero Seconds to Midnight - Clear Level"))
             elif data.id == 300100: #The Ancient Weapon Golden Gear
                 world.set_rule(world.get_location(name),
-                        CanReachLocation("The Gravity of Time - Golden Gear"))
+                        CanReachLocation("The Gravity of Time - Golden Gear") &
+                        CanReachLocation("The Houshou Pirates - Golden Gear"))
             elif data.id == 400254: #Roboco CD
                 world.set_rule(world.get_location(name),
                         CanReachLocation("Roboco Strikes Back - Golden Gear") &

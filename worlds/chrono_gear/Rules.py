@@ -73,9 +73,13 @@ def setLocationRules(world: ChronoGearWorld) -> None:
 def setCompletionCondition(world: ChronoGearWorld) -> None:
     if world.options.goal_condition == 0:
         world.get_region("Steel on Steel").add_event("Clear Steel on Steel", "Victory")
-        world.set_completion_rule(Has("Victory"))
-    elif world.options.goal_condition == 1:
-        world.get_region("Zero Seconds to Midnight").add_event("Clear Zero Seconds to Midnight", "Victory")
-        world.set_completion_rule(Has("Victory"))
+        if world.options.gear_hunt_requirement.value > 0:
+            world.set_completion_rule(HasAllCounts({"Golden Gear": world.options.gear_hunt_requirement.value, "Victory": 1}))
+        else:
+            world.set_completion_rule(Has("Victory"))
     else:
-        world.set_completion_rule(Has("Golden Gear", world.options.gear_hunt_requirement.value))
+        world.get_region("Zero Seconds to Midnight").add_event("Clear Zero Seconds to Midnight", "Victory")
+        if world.options.gear_hunt_requirement.value > 0:
+            world.set_completion_rule(HasAllCounts({"Golden Gear": world.options.gear_hunt_requirement.value, "Victory": 1}))
+        else:
+            world.set_completion_rule(Has("Victory"))

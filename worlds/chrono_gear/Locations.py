@@ -404,5 +404,204 @@ world_unlock_location_table: Dict[str, ChronoGearLocationData] = {
     "Intermission - Unlock World of Civilization": ChronoGearLocationData("Intermission", 4),
 }
 
+stage_score_location_table: Dict[str, ChronoGearLocationData] = {
+    "Storming the Sanctum - 100 Notes Score": ChronoGearLocationData("Storming the Sanctum", 110500),
+    "Storming the Sanctum - 100 Time Score": ChronoGearLocationData("Storming the Sanctum", 110501),
+    "Storming the Sanctum - 100 Damage Taken Score": ChronoGearLocationData("Storming the Sanctum", 110502),
+    
+    "Case Closed - 100 Time Score": ChronoGearLocationData("Case Closed", 112501),
+    "Case Closed - 100 Damage Taken Score": ChronoGearLocationData("Case Closed", 112502),
+
+    "Defending the Sanctum - 100 Notes Score": ChronoGearLocationData("Defending the Sanctum", 112500),
+    "Defending the Sanctum - 100 Time Score": ChronoGearLocationData("Defending the Sanctum", 112501),
+    "Defending the Sanctum - 100 Damage Taken Score": ChronoGearLocationData("Defending the Sanctum", 112502),
+    
+    "The Top of Bell Tower - 100 Notes Score": ChronoGearLocationData("The Top of Bell Tower", 120500),
+    "The Top of Bell Tower - 100 Time Score": ChronoGearLocationData("The Top of Bell Tower", 120501),
+    "The Top of Bell Tower - 100 Damage Taken Score": ChronoGearLocationData("The Top of Bell Tower", 120502),
+
+    "The Battle of Bell Town - 100 Time Score": ChronoGearLocationData("The Battle of Bell Town", 121501),
+    "The Battle of Bell Town - 100 Damage Taken Score": ChronoGearLocationData("The Battle of Bell Town", 121502),
+
+    "The PolPol Express - 100 Notes Score": ChronoGearLocationData("The PolPol Express", 130500),
+    "The PolPol Express - 100 Time Score": ChronoGearLocationData("The PolPol Express", 130501),
+    "The PolPol Express - 100 Damage Taken Score": ChronoGearLocationData("The PolPol Express", 130502),
+
+    "The Gravity of Time - 100 Notes Score": ChronoGearLocationData("The Gravity of Time", 140500),
+    "The Gravity of Time - 100 Time Score": ChronoGearLocationData("The Gravity of Time", 140501),
+    "The Gravity of Time - 100 Damage Taken Score": ChronoGearLocationData("The Gravity of Time", 140502),
+
+    "The Shattered Keep - 100 Notes Score": ChronoGearLocationData("The Shattered Keep", 150500),
+    "The Shattered Keep - 100 Time Score": ChronoGearLocationData("The Shattered Keep", 150501),
+    "The Shattered Keep - 100 Damage Taken Score": ChronoGearLocationData("The Shattered Keep", 150502),
+
+    "Call to Nature - 100 Notes Score": ChronoGearLocationData("Call to Nature", 210500),
+    "Call to Nature - 100 Time Score": ChronoGearLocationData("Call to Nature", 210501),
+    "Call to Nature - 100 Damage Taken Score": ChronoGearLocationData("Call to Nature", 210502),
+
+    "Autumn Harvest - 100 Notes Score": ChronoGearLocationData("Autumn Harvest", 211500),
+    "Autumn Harvest - 100 Time Score": ChronoGearLocationData("Autumn Harvest", 211501),
+    "Autumn Harvest - 100 Damage Taken Score": ChronoGearLocationData("Autumn Harvest", 211502),
+
+    "Wrath of Nature - 100 Time Score": ChronoGearLocationData("Wrath of Nature", 212501),
+    "Wrath of Nature - 100 Damage Taken Score": ChronoGearLocationData("Wrath of Nature", 212502),
+
+    "The Floating Islands - 100 Notes Score": ChronoGearLocationData("The Floating Islands", 220500),
+    "The Floating Islands - 100 Time Score": ChronoGearLocationData("The Floating Islands", 220501),
+    "The Floating Islands - 100 Damage Taken Score": ChronoGearLocationData("The Floating Islands", 220502),
+
+    "Riding the Waves - 100 Notes Score": ChronoGearLocationData("Riding the Waves", 230500),
+    "Riding the Waves - 100 Time Score": ChronoGearLocationData("Riding the Waves", 230501),
+    "Riding the Waves - 100 Damage Taken Score": ChronoGearLocationData("Riding the Waves", 230502),
+
+    "Chloe's Beach Race - 100 Time Score": ChronoGearLocationData("Chloe's Beach Race", 231501),
+    "Chloe's Beach Race - 100 Damage Taken Score": ChronoGearLocationData("Chloe's Beach Race", 231502),
+
+    "Rebuilding the Lost City - 100 Notes Score": ChronoGearLocationData("Rebuilding the Lost City", 240500),
+    "Rebuilding the Lost City - 100 Time Score": ChronoGearLocationData("Rebuilding the Lost City", 240501),
+    "Rebuilding the Lost City - 100 Damage Taken Score": ChronoGearLocationData("Rebuilding the Lost City", 240502),
+
+    "The Great Space Bake - 100 Notes Score": ChronoGearLocationData("The Great Space Bake", 310500),
+    "The Great Space Bake - 100 Time Score": ChronoGearLocationData("The Great Space Bake", 310501),
+    "The Great Space Bake - 100 Damage Taken Score": ChronoGearLocationData("The Great Space Bake", 310502),
+
+    "The Houshou Pirates - 100 Notes Score": ChronoGearLocationData("The Houshou Pirates", 320500),
+    "The Houshou Pirates - 100 Time Score": ChronoGearLocationData("The Houshou Pirates", 320501),
+    "The Houshou Pirates - 100 Damage Taken Score": ChronoGearLocationData("The Houshou Pirates", 320502),
+
+    "Luknight of Darkness - 100 Notes Score": ChronoGearLocationData("Luknight of Darkness", 330500),
+    "Luknight of Darkness - 100 Time Score": ChronoGearLocationData("Luknight of Darkness", 330501),
+    "Luknight of Darkness - 100 Damage Taken Score": ChronoGearLocationData("Luknight of Darkness", 330502),
+
+    "Ganmo's Grand Finale - 100 Notes Score": ChronoGearLocationData("Ganmo's Grand Finale", 331500),
+    "Ganmo's Grand Finale - 100 Time Score": ChronoGearLocationData("Ganmo's Grand Finale", 331501),
+    "Ganmo's Grand Finale - 100 Damage Taken Score": ChronoGearLocationData("Ganmo's Grand Finale", 331502),
+
+    "The Road to Civilization - 100 Notes Score": ChronoGearLocationData("The Road to Civilization", 410500),
+    "The Road to Civilization - 100 Time Score": ChronoGearLocationData("The Road to Civilization", 410501),
+    "The Road to Civilization - 100 Damage Taken Score": ChronoGearLocationData("The Road to Civilization", 410502),
+
+    "Roboco Strikes Back - 100 Notes Score": ChronoGearLocationData("Roboco Strikes Back", 411500),
+    "Roboco Strikes Back - 100 Time Score": ChronoGearLocationData("Roboco Strikes Back", 411501),
+    "Roboco Strikes Back - 100 Damage Taken Score": ChronoGearLocationData("Roboco Strikes Back", 411502),
+
+    "Path of Memories - 100 Notes Score": ChronoGearLocationData("Path of Memories", 420500),
+    "Path of Memories - 100 Time Score": ChronoGearLocationData("Path of Memories", 420501),
+    "Path of Memories - 100 Damage Taken Score": ChronoGearLocationData("Path of Memories", 420502),
+
+    "A Head Start - 100 Notes Score": ChronoGearLocationData("A Head Start", 430500),
+    "A Head Start - 100 Time Score": ChronoGearLocationData("A Head Start", 430501),
+    "A Head Start - 100 Damage Taken Score": ChronoGearLocationData("A Head Start", 430502),
+
+    "The War Mind - 100 Notes Score": ChronoGearLocationData("The War Mind", 440500),
+    "The War Mind - 100 Time Score": ChronoGearLocationData("The War Mind", 440501),
+    "The War Mind - 100 Damage Taken Score": ChronoGearLocationData("The War Mind", 440502),
+
+    "Caravan of Darkness - 100 Notes Score": ChronoGearLocationData("Caravan of Darkness", 510500),
+    "Caravan of Darkness - 100 Time Score": ChronoGearLocationData("Caravan of Darkness", 510501),
+    "Caravan of Darkness - 100 Damage Taken Score": ChronoGearLocationData("Caravan of Darkness", 510502),
+
+    "Overclocking the Arcade - 100 Notes Score": ChronoGearLocationData("Overclocking the Arcade", 520500),
+    "Overclocking the Arcade - 100 Time Score": ChronoGearLocationData("Overclocking the Arcade", 520501),
+    "Overclocking the Arcade - 100 Damage Taken Score": ChronoGearLocationData("Overclocking the Arcade", 520502),
+
+    "Song of Light and Darkness - 100 Notes Score": ChronoGearLocationData("Song of Light and Darkness", 530500),
+    "Song of Light and Darkness - 100 Time Score": ChronoGearLocationData("Song of Light and Darkness", 530501),
+    "Song of Light and Darkness - 100 Damage Taken Score": ChronoGearLocationData("Song of Light and Darkness", 530502),
+
+    "The KFP Games - 100 Notes Score": ChronoGearLocationData("The KFP Games", 540500),
+    "The KFP Games - 100 Time Score": ChronoGearLocationData("The KFP Games", 540501),
+    "The KFP Games - 100 Damage Taken Score": ChronoGearLocationData("The KFP Games", 540502),
+
+    "Another Time Traveler? - 100 Time Score": ChronoGearLocationData("Another Time Traveler?", 541501),
+    "Another Time Traveler? - 100 Damage Taken Score": ChronoGearLocationData("Another Time Traveler?", 541502),
+
+    "Solitude - 100 Notes Score": ChronoGearLocationData("Solitude", 710500),
+    "Solitude - 100 Time Score": ChronoGearLocationData("Solitude", 710501),
+    "Solitude - 100 Damage Taken Score": ChronoGearLocationData("Solitude", 710502),
+
+    "Entropy - 100 Notes Score": ChronoGearLocationData("Entropy", 720500),
+    "Entropy - 100 Time Score": ChronoGearLocationData("Entropy", 720501),
+    "Entropy - 100 Damage Taken Score": ChronoGearLocationData("Entropy", 720502),
+
+    "The Ancient Ones - 100 Time Score": ChronoGearLocationData("The Ancient Ones", 730501),
+    "The Ancient Ones - 100 Damage Taken Score": ChronoGearLocationData("The Ancient Ones", 730502),
+
+    "Gloom - 100 Notes Score": ChronoGearLocationData("Gloom", 730500),
+    "Gloom - 100 Time Score": ChronoGearLocationData("Gloom", 730501),
+    "Gloom - 100 Damage Taken Score": ChronoGearLocationData("Gloom", 730502),
+
+    "Despair - 100 Notes Score": ChronoGearLocationData("Despair", 740500),
+    "Despair - 100 Time Score": ChronoGearLocationData("Despair", 740501),
+    "Despair - 100 Damage Taken Score": ChronoGearLocationData("Despair", 740502),
+
+    "Hope - 100 Time Score": ChronoGearLocationData("Hope", 750501),
+    "Hope - 100 Damage Taken Score": ChronoGearLocationData("Hope", 750502),
+
+    "The Way Home - 100 Time Score": ChronoGearLocationData("The Way Home", 751501),
+    "The Way Home - 100 Damage Taken Score": ChronoGearLocationData("The Way Home", 751502),
+
+    "The Space Between Worlds - 100 Time Score": ChronoGearLocationData("The Space Between Worlds", 610501),
+    "The Space Between Worlds - 100 Damage Taken Score": ChronoGearLocationData("The Space Between Worlds", 610502),
+
+    "Her Time is Now - 100 Notes Score": ChronoGearLocationData("Her Time is Now", 620500),
+    "Her Time is Now - 100 Time Score": ChronoGearLocationData("Her Time is Now", 620501),
+    "Her Time is Now - 100 Damage Taken Score": ChronoGearLocationData("Her Time is Now", 620502),
+
+    "The Final Ascent - 100 Notes Score": ChronoGearLocationData("The Final Ascent", 630500),
+    "The Final Ascent - 100 Time Score": ChronoGearLocationData("The Final Ascent", 630501),
+    "The Final Ascent - 100 Damage Taken Score": ChronoGearLocationData("The Final Ascent", 630502),
+
+    "Steel on Steel - 100 Time Score": ChronoGearLocationData("Steel on Steel", 632501),
+    "Steel on Steel - 100 Damage Taken Score": ChronoGearLocationData("Steel on Steel", 632502),
+
+    "Zero Seconds to Midnight - 100 Time Score": ChronoGearLocationData("Zero Seconds to Midnight", 633501),
+    "Zero Seconds to Midnight - 100 Damage Taken Score": ChronoGearLocationData("Zero Seconds to Midnight", 633502),
+}
+
+total_stage_score_location_table: Dict[str, ChronoGearLocationData] = {
+    "Storming the Sanctum - 300 Total Score": ChronoGearLocationData("Storming the Sanctum", 110503),
+    "Case Closed - 300 Total Score": ChronoGearLocationData("Case Closed", 112503),
+    "Defending the Sanctum - 300 Total Score": ChronoGearLocationData("Defending the Sanctum", 112503),
+    "The Top of Bell Tower - 300 Total Score": ChronoGearLocationData("The Top of Bell Tower", 120503),
+    "The Battle of Bell Town - 300 Total Score": ChronoGearLocationData("The Battle of Bell Town", 121503),
+    "The PolPol Express - 300 Total Score": ChronoGearLocationData("The PolPol Express", 130503),
+    "The Gravity of Time - 300 Total Score": ChronoGearLocationData("The Gravity of Time", 140503),
+    "The Shattered Keep - 300 Total Score": ChronoGearLocationData("The Shattered Keep", 150503),
+    "Call to Nature - 300 Total Score": ChronoGearLocationData("Call to Nature", 210503),
+    "Autumn Harvest - 300 Total Score": ChronoGearLocationData("Autumn Harvest", 211503),
+    "Wrath of Nature - 300 Total Score": ChronoGearLocationData("Wrath of Nature", 212503),
+    "The Floating Islands - 300 Total Score": ChronoGearLocationData("The Floating Islands", 220503),
+    "Riding the Waves - 300 Total Score": ChronoGearLocationData("Riding the Waves", 230503),
+    "Chloe's Beach Race - 300 Total Score": ChronoGearLocationData("Chloe's Beach Race", 231503),
+    "Rebuilding the Lost City - 300 Total Score": ChronoGearLocationData("Rebuilding the Lost City", 240503),
+    "The Great Space Bake - 300 Total Score": ChronoGearLocationData("The Great Space Bake", 310503),
+    "The Houshou Pirates - 300 Total Score": ChronoGearLocationData("The Houshou Pirates", 320503),
+    "Luknight of Darkness - 300 Total Score": ChronoGearLocationData("Luknight of Darkness", 330503),
+    "Ganmo's Grand Finale - 300 Total Score": ChronoGearLocationData("Ganmo's Grand Finale", 331503),
+    "The Road to Civilization - 300 Total Score": ChronoGearLocationData("The Road to Civilization", 410503),
+    "Roboco Strikes Back - 300 Total Score": ChronoGearLocationData("Roboco Strikes Back", 411503),
+    "Path of Memories - 300 Total Score": ChronoGearLocationData("Path of Memories", 420503),
+    "A Head Start - 300 Total Score": ChronoGearLocationData("A Head Start", 430503),
+    "The War Mind - 300 Total Score": ChronoGearLocationData("The War Mind", 440503),
+    "Caravan of Darkness - 300 Total Score": ChronoGearLocationData("Caravan of Darkness", 510503),
+    "Overclocking the Arcade - 300 Total Score": ChronoGearLocationData("Overclocking the Arcade", 520503),
+    "Song of Light and Darkness - 300 Total Score": ChronoGearLocationData("Song of Light and Darkness", 530503),
+    "The KFP Games - 300 Total Score": ChronoGearLocationData("The KFP Games", 540503),
+    "Another Time Traveler? - 300 Total Score": ChronoGearLocationData("Another Time Traveler?", 541503),
+    "Solitude - 300 Total Score": ChronoGearLocationData("Solitude", 710503),
+    "Entropy - 300 Total Score": ChronoGearLocationData("Entropy", 720503),
+    "The Ancient Ones - 300 Total Score": ChronoGearLocationData("The Ancient Ones", 730503),
+    "Gloom - 300 Total Score": ChronoGearLocationData("Gloom", 730503),
+    "Despair - 300 Total Score": ChronoGearLocationData("Despair", 740503),
+    "Hope - 300 Total Score": ChronoGearLocationData("Hope", 750503),
+    "The Way Home - 300 Total Score": ChronoGearLocationData("The Way Home", 751503),
+    "The Space Between Worlds - 300 Total Score": ChronoGearLocationData("The Space Between Worlds", 610503),
+    "Her Time is Now - 300 Total Score": ChronoGearLocationData("Her Time is Now", 620503),
+    "The Final Ascent - 300 Total Score": ChronoGearLocationData("The Final Ascent", 630503),
+    "Steel on Steel - 300 Total Score": ChronoGearLocationData("Steel on Steel", 632503),
+    "Zero Seconds to Midnight - 300 Total Score": ChronoGearLocationData("Zero Seconds to Midnight", 633503),
+}
+
 def get_locations_for_mapping() -> Dict[str, ChronoGearLocationData]:
     return location_table | world_unlock_location_table

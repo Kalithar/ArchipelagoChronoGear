@@ -183,9 +183,9 @@ item_table: Dict[str, CGItemData] = {
     "The Way Home": CGItemData(1159, ItemClassification.progression),
     "Zero Seconds to Midnight": CGItemData(1161, ItemClassification.progression),
 
-    "Jade Apple": CGItemData(2500, ItemClassification.filler),
-    "Time Power Refill": CGItemData(2501, ItemClassification.filler),
-    "10 Notes": CGItemData(2502, ItemClassification.filler),
+    "Jade Apple": CGItemData(2600, ItemClassification.filler),
+    "Time Power Refill": CGItemData(2601, ItemClassification.filler),
+    "10 Notes": CGItemData(2602, ItemClassification.filler),
 }
 
 world_unlock_items: Dict[str, CGItemData] = {

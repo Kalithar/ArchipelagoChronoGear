@@ -4,9 +4,7 @@ from Options import Choice, OptionGroup, PerGameCommonOptions, Range, Toggle
 
 class GoalCondition(Choice):
     """
-    Sets the condition for clearing your game.
-    Steel on Steel and Zero Seconds to Midnight: Clear the chosen level
-    Gear Hunt: Receive a configurable number of Golden Gears
+    Set the level required to beat the game.
     """
 
     display_name = "Goal Condition"
@@ -19,19 +17,19 @@ class GoalCondition(Choice):
 
 class GearHuntRequirement(Range):
     """
-    Sets the required number of Golden Gears for the Gear Hunt goal condition.
-    Does nothing if the goal condition is not set to Gear Hunt.
+    Adds an optional Golden Gear requirement to beat the game.
+    The goal level must be cleared while holding this many Golden Gears.
     """
     display_name = "Gear Hunt Requirement"
 
-    range_start = 1
+    range_start = 0
     range_end = 35
 
-    default = 35
+    default = 0
 
 class SteelOnSteelShackleRequirement(Range):
     """
-    The number of Laplus' Shackles required to access Steel on Steel
+    The number of Laplus' Shackles required to access Steel on Steel.
     """
 
     display_name = "Steel on Steel Shackle Requirement"
@@ -43,7 +41,7 @@ class SteelOnSteelShackleRequirement(Range):
 
 class ZStMShackleRequirement(Range):
     """
-    The number of Laplus' Shackles required to access Zero Seconds to Midnight
+    The number of Laplus' Shackles required to access Zero Seconds to Midnight.
     """
 
     display_name = "Zero Seconds to Midnight Shackle Requirement"
@@ -76,6 +74,20 @@ class IntermissionWorldUnlocks(Toggle):
 
     display_name = "World Unlocks on Intermission"
 
+class StageIndividualScoreLocations(Toggle):
+    """
+    Adds locations to getting 100 score for notes, time, and damage taken to each stage.
+    Levels that do not have a notes score requirement do not have that location added.
+    """
+
+    display_name = "Individual Score Locations"
+
+class StageTotalScoreLocations(Toggle):
+    """
+    Adds locations for getting 300 total score in each stage.
+    """
+
+    display_name = "Total Score Locations"
 
 #class StartingWorld(Choice):
 #    """
@@ -117,6 +129,8 @@ class ChronoGearOptions(PerGameCommonOptions):
     gear_hunt_requirement: GearHuntRequirement
     world_unlock_mode: WorldUnlockMode
     intermission_world_unlocks: IntermissionWorldUnlocks
+    individual_score_locations: StageIndividualScoreLocations
+    total_score_locations: StageTotalScoreLocations
     #starting_world: StartingWorld
     steel_on_steel_shackle_requirement: SteelOnSteelShackleRequirement
     zero_seconds_to_midnight_shackle_requirement: ZStMShackleRequirement

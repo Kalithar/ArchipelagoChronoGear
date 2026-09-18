@@ -3,7 +3,7 @@ from __future__ import annotations
 from typing import TYPE_CHECKING, Dict
 
 from BaseClasses import Region, ItemClassification
-from worlds.chrono_gear.Locations import location_table, event_location_table, world_unlock_location_table, ChronoGearLocation, ChronoGearLocationData
+from worlds.chrono_gear.Locations import location_table, event_location_table, world_unlock_location_table, stage_score_location_table, total_stage_score_location_table, level_collectible_location_table, ChronoGearLocation, ChronoGearLocationData
 from rule_builder.rules import Has, HasAllCounts, HasAll, CanReachLocation
 from . import Items
 
@@ -210,6 +210,12 @@ def add_locations(world: ChronoGearWorld):
     locations: Dict[str, ChronoGearLocationData] = location_table
     if world.options.world_unlock_mode == 1:
         locations = locations | world_unlock_location_table
+    if world.options.individual_score_locations == True:
+        locations = locations | stage_score_location_table
+    if world.options.total_score_locations == True:
+        locations = locations | total_stage_score_location_table
+    if world.options.level_collectible_locations == True:
+        locations = locations | level_collectible_location_table
     for name, data in locations.items():
         if data.region == "Intermission":
             if world.options.intermission_world_unlocks == False:

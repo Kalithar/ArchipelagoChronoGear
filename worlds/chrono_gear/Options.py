@@ -89,6 +89,15 @@ class StageTotalScoreLocations(Toggle):
 
     display_name = "Total Score Locations"
 
+class LevelCollectibleLocations(Toggle):
+    """
+    Adds locations for the level-specific collectibles in Autumn Harvest, Path of Memories, and The Final Ascent,
+    and adds the collectibles as items to the item pool.
+    This also makes the key gates in Final Ascent permanently opened, persisting between attempts in the level.
+    """
+
+    display_name = "Level Collectible Locations"
+
 #class StartingWorld(Choice):
 #    """
 #    Choose the world you will start in.
@@ -131,6 +140,7 @@ class ChronoGearOptions(PerGameCommonOptions):
     intermission_world_unlocks: IntermissionWorldUnlocks
     individual_score_locations: StageIndividualScoreLocations
     total_score_locations: StageTotalScoreLocations
+    level_collectible_locations: LevelCollectibleLocations
     #starting_world: StartingWorld
     steel_on_steel_shackle_requirement: SteelOnSteelShackleRequirement
     zero_seconds_to_midnight_shackle_requirement: ZStMShackleRequirement

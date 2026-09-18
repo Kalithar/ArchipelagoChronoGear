@@ -182,10 +182,6 @@ item_table: Dict[str, CGItemData] = {
     "The Ancient Ones": CGItemData(1158, ItemClassification.progression),
     "The Way Home": CGItemData(1159, ItemClassification.progression),
     "Zero Seconds to Midnight": CGItemData(1161, ItemClassification.progression),
-
-    "Jade Apple": CGItemData(2600, ItemClassification.filler),
-    "Time Power Refill": CGItemData(2601, ItemClassification.filler),
-    "10 Notes": CGItemData(2602, ItemClassification.filler),
 }
 
 world_unlock_items: Dict[str, CGItemData] = {
@@ -196,6 +192,12 @@ world_unlock_items: Dict[str, CGItemData] = {
     "World of Chaos": CGItemData(1204, ItemClassification.progression),
     "World of Darkness": CGItemData(1205, ItemClassification.progression),
     "Alter Timeline": CGItemData(1206, ItemClassification.progression),
+}
+
+level_collectible_items: Dict[str, CGItemData] = {
+    "Acorn": CGItemData(2700, ItemClassification.progression, 14),
+    "Maze Part": CGItemData(2701, ItemClassification.progression, 16),
+    "Tower Key": CGItemData(2702, ItemClassification.progression, 3),
 }
 
 filler_items: Dict[str, CGItemData] = {
@@ -221,6 +223,11 @@ def generate_all_items(world: ChronoGearWorld):
         for name, data in world_unlock_items.items():
             itempool += [world.create_item(name)]
     
+    if world.options.level_collectible_locations == True:
+        for name, data in level_collectible_items.items():
+            for i in range(data.max_quantity):
+                itempool += [world.create_item(name)]
+
     item_count = len(itempool)
     unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
     needed_filler = unfilled_locations - item_count
@@ -232,4 +239,4 @@ def get_filler_name(world: ChronoGearWorld) -> str:
     return list(filler_items)[world.random.randint(0, len(filler_items.keys()) - 1)]
 
 def get_items_for_mapping() -> Dict[str, CGItemData]:
-    return item_table | world_unlock_items
+    return item_table | world_unlock_items | level_collectible_items | filler_items

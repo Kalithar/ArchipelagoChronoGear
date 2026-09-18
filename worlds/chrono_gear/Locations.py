@@ -603,5 +603,43 @@ total_stage_score_location_table: Dict[str, ChronoGearLocationData] = {
     "Zero Seconds to Midnight - 300 Total Score": ChronoGearLocationData("Zero Seconds to Midnight", 633503),
 }
 
+level_collectible_location_table: Dict[str, ChronoGearLocationData] = {
+    "Autumn Harvest - Acorn 1": ChronoGearLocationData("Autumn Harvest", 211600),
+    "Autumn Harvest - Acorn 2": ChronoGearLocationData("Autumn Harvest", 211601),
+    "Autumn Harvest - Acorn 3": ChronoGearLocationData("Autumn Harvest", 211602),
+    "Autumn Harvest - Acorn 4": ChronoGearLocationData("Autumn Harvest", 211603),
+    "Autumn Harvest - Acorn 5": ChronoGearLocationData("Autumn Harvest", 211604),
+    "Autumn Harvest - Acorn 6": ChronoGearLocationData("Autumn Harvest", 211605),
+    "Autumn Harvest - Acorn 7": ChronoGearLocationData("Autumn Harvest", 211606),
+    "Autumn Harvest - Acorn 8": ChronoGearLocationData("Autumn Harvest", 211607),
+    "Autumn Harvest - Acorn 9": ChronoGearLocationData("Autumn Harvest", 211608),
+    "Autumn Harvest - Acorn 10": ChronoGearLocationData("Autumn Harvest", 211609),
+    "Autumn Harvest - Acorn 11": ChronoGearLocationData("Autumn Harvest", 211610),
+    "Autumn Harvest - Acorn 12": ChronoGearLocationData("Autumn Harvest", 211611),
+    "Autumn Harvest - Acorn 13": ChronoGearLocationData("Autumn Harvest", 211612),
+    "Autumn Harvest - Acorn 14": ChronoGearLocationData("Autumn Harvest", 211613),
+
+    "Path of Memories - Maze Part 1": ChronoGearLocationData("Path of Memories", 420600),
+    "Path of Memories - Maze Part 2": ChronoGearLocationData("Path of Memories", 420601),
+    "Path of Memories - Maze Part 3": ChronoGearLocationData("Path of Memories", 420602),
+    "Path of Memories - Maze Part 4": ChronoGearLocationData("Path of Memories", 420603),
+    "Path of Memories - Maze Part 5": ChronoGearLocationData("Path of Memories", 420604),
+    "Path of Memories - Maze Part 6": ChronoGearLocationData("Path of Memories", 420605),
+    "Path of Memories - Maze Part 7": ChronoGearLocationData("Path of Memories", 420606),
+    "Path of Memories - Maze Part 8": ChronoGearLocationData("Path of Memories", 420607),
+    "Path of Memories - Maze Part 9": ChronoGearLocationData("Path of Memories", 420608),
+    "Path of Memories - Maze Part 10": ChronoGearLocationData("Path of Memories", 420609),
+    "Path of Memories - Maze Part 11": ChronoGearLocationData("Path of Memories", 420610),
+    "Path of Memories - Maze Part 12": ChronoGearLocationData("Path of Memories", 420611),
+    "Path of Memories - Maze Part 13": ChronoGearLocationData("Path of Memories", 420612),
+    "Path of Memories - Maze Part 14": ChronoGearLocationData("Path of Memories", 420613),
+    "Path of Memories - Maze Part 15": ChronoGearLocationData("Path of Memories", 420614),
+    "Path of Memories - Maze Part 16": ChronoGearLocationData("Path of Memories", 420615),
+
+    "The Final Ascent - Tower Key 1": ChronoGearLocationData("The Final Ascent", 630600),
+    "The Final Ascent - Tower Key 2": ChronoGearLocationData("The Final Ascent", 630601),
+    "The Final Ascent - Tower Key 3": ChronoGearLocationData("The Final Ascent", 630602),
+}
+
 def get_locations_for_mapping() -> Dict[str, ChronoGearLocationData]:
-    return location_table | world_unlock_location_table
+    return location_table | world_unlock_location_table | total_stage_score_location_table | stage_score_location_table | level_collectible_location_table

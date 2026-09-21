@@ -206,8 +206,15 @@ filler_items: Dict[str, CGItemData] = {
     "10 Notes": CGItemData(2602, ItemClassification.filler),
 }
 
+sidequest_items: Dict[str, CGItemData] = {
+    "Anya's Keris": CGItemData(2800, ItemClassification.progression),
+    "Fishing Rod": CGItemData(2801, ItemClassification.progression),
+    "Kobo's Gun": CGItemData(2802, ItemClassification.progression),
+    "Roboco's Schematics": CGItemData(2803, ItemClassification.progression),
+}
+
 def generate_item(world: ChronoGearWorld, name: str) -> Item:
-    all_items = item_table | world_unlock_items
+    all_items = get_items_for_mapping()
 
     item = CGItem(name, all_items[name].classification, all_items[name].id, world.player)
 
@@ -228,6 +235,10 @@ def generate_all_items(world: ChronoGearWorld):
             for i in range(data.max_quantity):
                 itempool += [world.create_item(name)]
 
+    if world.options.sidequest_locations == True:
+        for name, data in sidequest_items.items():
+            itempool += [world.create_item(name)]
+
     item_count = len(itempool)
     unfilled_locations = len(world.multiworld.get_unfilled_locations(world.player))
     needed_filler = unfilled_locations - item_count
@@ -239,4 +250,4 @@ def get_filler_name(world: ChronoGearWorld) -> str:
     return list(filler_items)[world.random.randint(0, len(filler_items.keys()) - 1)]
 
 def get_items_for_mapping() -> Dict[str, CGItemData]:
-    return item_table | world_unlock_items | level_collectible_items | filler_items
+    return item_table | world_unlock_items | level_collectible_items | filler_items | sidequest_items

@@ -647,5 +647,10 @@ level_collectible_location_table: Dict[str, ChronoGearLocationData] = {
     "The Final Ascent - Key above Bow Platforms": ChronoGearLocationData("The Final Ascent", 630602),
 }
 
+sidequest_location_table: Dict[str, ChronoGearLocationData] = {
+    "The Gravity of Time - Anya's Keris": ChronoGearLocationData("The Gravity of Time", 140700),
+    "Magic Resort - Fishing Rod": ChronoGearLocationData("Magic Resort", 200700),
+}
+
 def get_locations_for_mapping() -> Dict[str, ChronoGearLocationData]:
-    return location_table | world_unlock_location_table | total_stage_score_location_table | stage_score_location_table | level_collectible_location_table
+    return location_table | world_unlock_location_table | total_stage_score_location_table | stage_score_location_table | level_collectible_location_table | sidequest_location_table

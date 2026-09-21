@@ -10,6 +10,7 @@ if TYPE_CHECKING:
 
 def setAllRules(world:ChronoGearWorld) -> None:
     setLocationRules(world)
+    setOptionRules(world)
     setCompletionCondition(world)
 
 def setLocationRules(world: ChronoGearWorld) -> None:
@@ -95,6 +96,14 @@ def setOptionRules(world: ChronoGearWorld) -> None:
                 world.set_rule(world.get_location(id), Has("Tower Key", 1))
         if world.options.total_score_locations == True:
             world.set_rule(world.get_location(630503), Has("Tower Key", 1))
+    
+    if world.options.sidequest_locations == True:
+        world.set_rule(world.get_location(300100), Has("Anya's Keris", 1))
+        world.set_rule(world.get_location(400254), Has("Roboco's Schematics", 1))
+        for id in [200360, 200361, 200362, 200363, 200364, 200365, 200366]:
+            world.set_rule(world.get_location(id), Has("Fishing Rod", 1))
+        for id in [400100, 400302, 400248]:
+            world.set_rule(world.get_location(id), Has("Kobo's Gun", 1))
 
 def setCompletionCondition(world: ChronoGearWorld) -> None:
     if world.options.goal_condition == 0:

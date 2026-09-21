@@ -98,6 +98,13 @@ class LevelCollectibleLocations(Toggle):
 
     display_name = "Level Collectible Locations"
 
+class SidequestLocations(Toggle):
+    """
+    Adds an item requirement for the powerwashing, fishing, Anya, and Roboco sidequests.
+    """
+
+    display_name = "Sidequest Locations"
+
 #class StartingWorld(Choice):
 #    """
 #    Choose the world you will start in.
@@ -141,6 +148,7 @@ class ChronoGearOptions(PerGameCommonOptions):
     individual_score_locations: StageIndividualScoreLocations
     total_score_locations: StageTotalScoreLocations
     level_collectible_locations: LevelCollectibleLocations
+    sidequest_locations: SidequestLocations
     #starting_world: StartingWorld
     steel_on_steel_shackle_requirement: SteelOnSteelShackleRequirement
     zero_seconds_to_midnight_shackle_requirement: ZStMShackleRequirement

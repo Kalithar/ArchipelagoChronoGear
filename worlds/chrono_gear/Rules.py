@@ -68,7 +68,33 @@ def setLocationRules(world: ChronoGearWorld) -> None:
             elif data.id == 620000: #Complete A Way Home
                 world.set_rule(world.get_location(name),
                                Has("Chrono Gear", 1))
-    
+
+def setOptionRules(world: ChronoGearWorld) -> None:
+    if world.options.level_collectible_locations == True:
+        for id in [211100, 211235, 211343]: #Autumn Harvest winter locations
+            world.set_rule(world.get_location(id), Has("Acorn", 10))
+        if world.options.individual_score_locations == True:
+            for id in [211500, 211501, 211502]:
+                world.set_rule(world.get_location(id), Has("Acorn", 10))
+        if world.options.total_score_locations == True:
+            world.set_rule(world.get_location(211503), Has("Acorn", 10))
+        
+        for id in [430000, 420100]:
+            world.set_rule(world.get_location(id), Has("Maze Part", 10))
+        if world.options.individual_score_locations == True:
+            for id in [420500, 420501, 420502]:
+                world.set_rule(world.get_location(id), Has("Maze Part", 10))
+        if world.options.total_score_locations == True:
+            world.set_rule(world.get_location(420503), Has("Maze Part", 10))
+        
+        for id in [631000, 630100, 630278, 630280, 630281]:
+            world.set_rule(world.get_location(id), Has("Tower Key", 1))
+        world.set_rule(world.get_location(630279), Has("Tower Key", 3))
+        if world.options.individual_score_locations == True:
+            for id in [630500, 630501, 630502]:
+                world.set_rule(world.get_location(id), Has("Tower Key", 1))
+        if world.options.total_score_locations == True:
+            world.set_rule(world.get_location(630503), Has("Tower Key", 1))
 
 def setCompletionCondition(world: ChronoGearWorld) -> None:
     if world.options.goal_condition == 0:

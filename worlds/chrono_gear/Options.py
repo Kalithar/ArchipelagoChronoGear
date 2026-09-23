@@ -11,7 +11,6 @@ class GoalCondition(Choice):
 
     option_steel_on_steel = 0
     option_zstm = 1
-    option_gear_hunt = 2
 
     default = option_zstm
 

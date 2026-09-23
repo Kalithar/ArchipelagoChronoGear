@@ -409,8 +409,8 @@ stage_score_location_table: Dict[str, ChronoGearLocationData] = {
     "Storming the Sanctum - 100 Time Score": ChronoGearLocationData("Storming the Sanctum", 110501),
     "Storming the Sanctum - 100 Damage Taken Score": ChronoGearLocationData("Storming the Sanctum", 110502),
     
-    "Case Closed - 100 Time Score": ChronoGearLocationData("Case Closed", 112501),
-    "Case Closed - 100 Damage Taken Score": ChronoGearLocationData("Case Closed", 112502),
+    "Case Closed - 100 Time Score": ChronoGearLocationData("Case Closed", 111501),
+    "Case Closed - 100 Damage Taken Score": ChronoGearLocationData("Case Closed", 111502),
 
     "Defending the Sanctum - 100 Notes Score": ChronoGearLocationData("Defending the Sanctum", 112500),
     "Defending the Sanctum - 100 Time Score": ChronoGearLocationData("Defending the Sanctum", 112501),
@@ -524,8 +524,8 @@ stage_score_location_table: Dict[str, ChronoGearLocationData] = {
     "Entropy - 100 Time Score": ChronoGearLocationData("Entropy", 720501),
     "Entropy - 100 Damage Taken Score": ChronoGearLocationData("Entropy", 720502),
 
-    "The Ancient Ones - 100 Time Score": ChronoGearLocationData("The Ancient Ones", 730501),
-    "The Ancient Ones - 100 Damage Taken Score": ChronoGearLocationData("The Ancient Ones", 730502),
+    "The Ancient Ones - 100 Time Score": ChronoGearLocationData("The Ancient Ones", 711501),
+    "The Ancient Ones - 100 Damage Taken Score": ChronoGearLocationData("The Ancient Ones", 711502),
 
     "Gloom - 100 Notes Score": ChronoGearLocationData("Gloom", 730500),
     "Gloom - 100 Time Score": ChronoGearLocationData("Gloom", 730501),
@@ -561,7 +561,7 @@ stage_score_location_table: Dict[str, ChronoGearLocationData] = {
 
 total_stage_score_location_table: Dict[str, ChronoGearLocationData] = {
     "Storming the Sanctum - 300 Total Score": ChronoGearLocationData("Storming the Sanctum", 110503),
-    "Case Closed - 300 Total Score": ChronoGearLocationData("Case Closed", 112503),
+    "Case Closed - 300 Total Score": ChronoGearLocationData("Case Closed", 111503),
     "Defending the Sanctum - 300 Total Score": ChronoGearLocationData("Defending the Sanctum", 112503),
     "The Top of Bell Tower - 300 Total Score": ChronoGearLocationData("The Top of Bell Tower", 120503),
     "The Battle of Bell Town - 300 Total Score": ChronoGearLocationData("The Battle of Bell Town", 121503),
@@ -591,7 +591,7 @@ total_stage_score_location_table: Dict[str, ChronoGearLocationData] = {
     "Another Time Traveler? - 300 Total Score": ChronoGearLocationData("Another Time Traveler?", 541503),
     "Solitude - 300 Total Score": ChronoGearLocationData("Solitude", 710503),
     "Entropy - 300 Total Score": ChronoGearLocationData("Entropy", 720503),
-    "The Ancient Ones - 300 Total Score": ChronoGearLocationData("The Ancient Ones", 730503),
+    "The Ancient Ones - 300 Total Score": ChronoGearLocationData("The Ancient Ones", 711503),
     "Gloom - 300 Total Score": ChronoGearLocationData("Gloom", 730503),
     "Despair - 300 Total Score": ChronoGearLocationData("Despair", 740503),
     "Hope - 300 Total Score": ChronoGearLocationData("Hope", 750503),
@@ -642,9 +642,9 @@ level_collectible_location_table: Dict[str, ChronoGearLocationData] = {
     "Path of Memories - Top right chest in second chest room": ChronoGearLocationData("Path of Memories", 420620),
     "Path of Memories - Bottom left chest in second chest room": ChronoGearLocationData("Path of Memories", 420621),
 
-    "The Final Ascent - Key at top of elevator": ChronoGearLocationData("The Final Ascent", 630600),
-    "The Final Ascent - Key guarded by Dark Impact": ChronoGearLocationData("The Final Ascent", 630601),
-    "The Final Ascent - Key above Bow Platforms": ChronoGearLocationData("The Final Ascent", 630602),
+    "The Final Ascent - Key at top of elevator": ChronoGearLocationData("The Final Ascent", 630611),
+    "The Final Ascent - Key guarded by Dark Impact": ChronoGearLocationData("The Final Ascent", 630617),
+    "The Final Ascent - Key above Bow Platforms": ChronoGearLocationData("The Final Ascent", 630620),
 }
 
 sidequest_location_table: Dict[str, ChronoGearLocationData] = {

@@ -72,37 +72,39 @@ def setLocationRules(world: ChronoGearWorld) -> None:
 
 def setOptionRules(world: ChronoGearWorld) -> None:
     if world.options.level_collectible_locations == True:
-        for id in [211100, 211235, 211343]: #Autumn Harvest winter locations
+        for id in ["Autumn Harvest - Golden Gear", "Autumn Harvest - CD in winter pointed to by haste notes", "Autumn Harvest - Thread of Time above second winter warp trunk"]:
             world.set_rule(world.get_location(id), Has("Acorn", 10))
         if world.options.individual_score_locations == True:
-            for id in [211500, 211501, 211502]:
+            for id in ["Autumn Harvest - 100 Notes Score", "Autumn Harvest - 100 Time Score", "Autumn Harvest - 100 Damage Taken Score"]:
                 world.set_rule(world.get_location(id), Has("Acorn", 10))
         if world.options.total_score_locations == True:
-            world.set_rule(world.get_location(211503), Has("Acorn", 10))
+            world.set_rule(world.get_location("Autumn Harvest - 300 Total Score"), Has("Acorn", 10))
         
-        for id in [430000, 420100]:
+        for id in ["Path of Memories - Golden Gear", "Path of Memories - Unlock A Head Start"]:
             world.set_rule(world.get_location(id), Has("Maze Part", 10))
         if world.options.individual_score_locations == True:
-            for id in [420500, 420501, 420502]:
+            for id in ["Path of Memories - 100 Notes Score", "Path of Memories - 100 Time Score", "Path of Memories - 100 Damage Taken Score"]:
                 world.set_rule(world.get_location(id), Has("Maze Part", 10))
         if world.options.total_score_locations == True:
-            world.set_rule(world.get_location(420503), Has("Maze Part", 10))
+            world.set_rule(world.get_location("Path of Memories - 300 Total Score"), Has("Maze Part", 10))
         
-        for id in [631000, 630100, 630278, 630280, 630281]:
+        for id in ["The Final Ascent - Unlock Steel on Steel", "The Final Ascent - Golden Gear", "The Final Ascent - CD in large room with Arc Sentinels", 
+                   "The Final Ascent - CD above ruined portal", "The Final Ascent - CD at top of frozen time section with Shadow Armor"]:
             world.set_rule(world.get_location(id), Has("Tower Key", 1))
-        world.set_rule(world.get_location(630279), Has("Tower Key", 3))
+        world.set_rule(world.get_location("The Final Ascent - CD behind key locked door"), Has("Tower Key", 3))
         if world.options.individual_score_locations == True:
-            for id in [630500, 630501, 630502]:
+            for id in ["The Final Ascent - 100 Notes Score", "The Final Ascent - 100 Time Score", "The Final Ascent - 100 Damage Taken Score"]:
                 world.set_rule(world.get_location(id), Has("Tower Key", 1))
         if world.options.total_score_locations == True:
-            world.set_rule(world.get_location(630503), Has("Tower Key", 1))
-    
+            world.set_rule(world.get_location("The Final Ascent - 300 Total Score"), Has("Tower Key", 1))
+
     if world.options.sidequest_locations == True:
-        world.set_rule(world.get_location(300100), Has("Anya's Keris", 1))
-        world.set_rule(world.get_location(400254), Has("Roboco's Schematics", 1))
-        for id in [200360, 200361, 200362, 200363, 200364, 200365, 200366]:
+        world.set_rule(world.get_location("Starship ID - Golden Gear"), Has("Anya's Keris", 1))
+        world.set_rule(world.get_location("Town Square - CD from fixing Roboco"), Has("Roboco's Schematics", 1))
+        for id in ["Magic Resort - Golden Gear", "Magic Resort - Thread of Time for catching Trout", "Magic Resort - Thread of Time for catching Salmon", "Magic Resort - Thread of Time for catching Carp", "Magic Resort - Thread of Time for catching Eel",
+                    "Magic Resort - Thread of Time for catching Dace", "Magic Resort - Thread of Time for catching Pike", "Magic Resort - Thread of Time for catching Bream"]:
             world.set_rule(world.get_location(id), Has("Fishing Rod", 1))
-        for id in [400100, 400302, 400248]:
+        for id in ["Town Square - Golden Gear", "Town Square - Thread of Time from powerwashing", "Town Square - CD in powerwashing room"]:
             world.set_rule(world.get_location(id), Has("Kobo's Gun", 1))
 
 def setCompletionCondition(world: ChronoGearWorld) -> None:
